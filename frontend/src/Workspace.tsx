@@ -1,6 +1,9 @@
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useRef } from "react";
 import type { Signer } from "ethers";
-import { Contract } from "ethers";
+import { Contract, isAddress } from "ethers";
+import { errorText, positiveAmount, operationName } from "./messages";
+import savedSimulation from "../../docs/results/simulation.json";
+import savedArbitrage from "../../docs/results/arbitrage.json";
 import {
   config,
   rpc,
@@ -12,6 +15,8 @@ import {
   formatEther,
   deadline,
   approve,
+  ensureBalance,
+  depositETH,
   pools,
   positions,
   scan,
@@ -32,11 +37,10 @@ type Log = {
 };
 const pages = ["兑换", "流动性", "创建交易池", "套利", "模拟与记录"];
 const equal = (a: string, b: string) => a.toLowerCase() === b.toLowerCase();
-const errorText = (e: unknown) => {
-  const x = e as { reason?: string; shortMessage?: string; message?: string };
-  return x.reason || x.shortMessage || x.message || String(e);
-};
 function Workspace() {
+  const pending = useRef(false);
+  const activeSigner = useRef<Signer | undefined>(undefined);
+  const refreshVersion = useRef(0);
   const [page, setPage] = useState("兑换"),
     [signer, setSigner] = useState<Signer>(),
     [address, setAddress] = useState(""),
@@ -74,11 +78,21 @@ function Workspace() {
     [sourcePool, setSourcePool] = useState("all");
   const p = all.find((p) => p.key === selected),
     sym = (a: string) => symbols[a.toLowerCase()] || short(a);
+  const amountError = (() => {
+    try {
+      positiveAmount(amount, "兑换数量");
+      return "";
+    } catch (e) {
+      return errorText(e);
+    }
+  })();
   const refresh = useCallback(
     async (s?: Signer) => {
+      const version = ++refreshVersion.current;
       try {
         const pp = await pools(),
           nn = await positions();
+        if (version !== refreshVersion.current) return false;
         setAll(pp);
         setNfts(nn);
         setBlock(await rpc.getBlockNumber());
@@ -99,7 +113,8 @@ function Workspace() {
           }),
         );
         setSymbols(sy);
-        const active = s || signer;
+        if (version !== refreshVersion.current) return false;
+        const active = s || activeSigner.current;
         if (active) {
           const addr = await active.getAddress();
           setAddress(addr);
@@ -110,10 +125,13 @@ function Workspace() {
               bb[a.toLowerCase()] = await token(a).balanceOf(addr);
             }),
           );
+          if (version !== refreshVersion.current) return false;
           setBalances(bb);
         }
+        return true;
       } catch (e) {
-        setError("本地区块链尚未就绪：" + errorText(e));
+        setError("页面数据更新失败：" + errorText(e));
+        return false;
       }
     },
     [signer],
@@ -122,30 +140,45 @@ function Workspace() {
     rpc
       .getSigner(1)
       .then((s) => {
+        if (pending.current || activeSigner.current) return;
+        activeSigner.current = s;
         setSigner(s);
         return refresh(s);
       })
       .catch((e) => setError(errorText(e)));
-    fetch("/results/simulation.json")
-      .then((r) => (r.ok ? r.json() : null))
-      .then((r) => r && setSimResult({ ...r, saved: true }))
-      .catch(() => {});
-    fetch("/results/arbitrage.json")
-      .then((r) => (r.ok ? r.json() : null))
-      .then((r) => {
-        if (r) {
-          setArbResult({ ...r.success, saved: true });
-          setFailure(r.failure);
-        }
-      })
-      .catch(() => {});
+    setSimResult({ ...savedSimulation, saved: true });
+    const r = savedArbitrage.success;
+    setArbResult({
+      ...r,
+      saved: true,
+      amountIn: r.inputCTB,
+      intermediateAmount: r.intermediateCTA,
+      amountOut: r.outputCTB,
+      profit: r.profitCTB,
+      balanceBefore: r.balanceBeforeCTB,
+      balanceAfter: r.balanceAfterCTB,
+      inputSymbol: "CTB",
+      middleSymbol: "CTA",
+      poolLabels: config.exchanges.map((x) => x.name),
+      before: r.before.map((x) => ({
+        reserveInput: x.reserveCTB,
+        reserveMiddle: x.reserveCTA,
+        priceMiddlePerInput: 1 / x.priceCTBperCTA,
+      })),
+      after: r.after.map((x) => ({
+        reserveInput: x.reserveCTB,
+        reserveMiddle: x.reserveCTA,
+        priceMiddlePerInput: 1 / x.priceCTBperCTA,
+      })),
+    });
+    setFailure({ ...savedArbitrage.failure, saved: true });
   }, []);
   useEffect(() => {
     if (!p) return;
     let live = true;
     try {
       dex(p.address)
-        .quote(p.id, input, parseEther(amount || "0"))
+        .quote(p.id, input, positiveAmount(amount, "兑换数量"))
         .then((q) => live && setQuote(q))
         .catch(() => live && setQuote(0n));
     } catch {
@@ -162,37 +195,55 @@ function Workspace() {
           label,
           hash: tx.hash || r?.hash || "",
           block: r?.blockNumber || 0,
-          gas: r?.gasUsed?.toString() || "—",
+          gas: r?.gasUsed?.toString() || "暂无",
           status,
         },
         ...old,
       ].slice(0, 100),
     );
-  const act = async (label: string, job: () => Promise<any>) => {
-    if (busy) return;
+  const act = async (
+    label: string,
+    job: () => Promise<any>,
+    requireAccount = true,
+  ) => {
+    if (pending.current) return;
+    pending.current = true;
     setBusy(label);
     setError("");
     setNotice("");
     try {
-      if (!signer) throw Error("请先选择本地账户或连接钱包");
+      if (requireAccount && !activeSigner.current)
+        throw Error("请先选择本地账户或连接钱包。");
       const tx = await job();
       if (tx?.wait) {
         const r = await tx.wait();
         addLog(label, tx, r);
       }
-      await refresh();
-      setNotice(label + "完成");
+      const updated = await refresh();
+      setNotice(
+        updated
+          ? label + "已完成。"
+          : label + "已确认，页面数据暂未更新，请手动刷新。",
+      );
     } catch (e) {
       setError(errorText(e));
     } finally {
+      pending.current = false;
       setBusy("");
     }
   };
   const changeAccount = async (value: string) => {
-    setAccount(value);
+    if (pending.current) return;
     setError("");
+    activeSigner.current = undefined;
+    setSigner(undefined);
+    setAddress("");
+    setBalances({});
+    setEth(0n);
     try {
       const s = await rpc.getSigner(Number(value));
+      activeSigner.current = s;
+      setAccount(value);
       setSigner(s);
       await refresh(s);
     } catch (e) {
@@ -200,7 +251,11 @@ function Workspace() {
     }
   };
   const find = async () => {
-    const list = await scan(await pools(), arbInput, parseEther(arbAmount));
+    const list = await scan(
+      await pools(),
+      arbInput,
+      positiveAmount(arbAmount, "套利本金"),
+    );
     setOpps(list);
     return list;
   };
@@ -210,6 +265,8 @@ function Workspace() {
     if (!o) throw Error("没有同币对的可用路径");
     if (!forced && o.profit <= 0n)
       throw Error("当前报价无利润，请先在一个交易所兑换以形成价差");
+    const requiredProfit = positiveAmount(minProfit, "最低利润");
+    await ensureBalance(o.input, o.amount, signer!);
     await approve(o.input, config.arbitrage, o.amount, signer!);
     const before = await pools(),
       beforeBalance = await token(o.input).balanceOf(address);
@@ -221,7 +278,7 @@ function Workspace() {
         o.sell.id,
         o.input,
         o.amount,
-        forced ? parseEther("1000000") : parseEther(minProfit),
+        forced ? parseEther("1000000") : requiredProfit,
         await deadline(),
         { gasLimit: 1500000 },
       );
@@ -241,16 +298,23 @@ function Workspace() {
         hash: tx.hash,
         status: r.status,
         block: r.blockNumber,
-        inputCTB: formatEther(o.amount),
-        intermediateCTA: formatEther(evt.args.intermediateAmount),
-        outputCTB: formatEther(evt.args.amountOut),
-        profitCTB: formatEther(balance - beforeBalance),
-        balanceBeforeCTB: formatEther(beforeBalance),
-        balanceAfterCTB: formatEther(balance),
+        amountIn: formatEther(o.amount),
+        intermediateAmount: formatEther(evt.args.intermediateAmount),
+        amountOut: formatEther(evt.args.amountOut),
+        profit: formatEther(balance - beforeBalance),
+        balanceBefore: formatEther(beforeBalance),
+        balanceAfter: formatEther(balance),
         buy: o.buy.exchange,
         sell: o.sell.exchange,
-        before: before.filter((x) => x.id === 1).map(priceSnapshot),
-        after: after.filter((x) => x.id === 1).map(priceSnapshot),
+        before: [o.buy, o.sell].map((x) =>
+          priceSnapshot(before.find((p) => p.key === x.key)!, o.input),
+        ),
+        after: [o.buy, o.sell].map((x) =>
+          priceSnapshot(after.find((p) => p.key === x.key)!, o.input),
+        ),
+        poolLabels: [o.buy, o.sell].map(
+          (x) => config.exchanges[x.exchange].name + "，交易池 " + x.id,
+        ),
         inputSymbol: sym(o.input),
         middleSymbol: sym(o.middle),
       });
@@ -278,29 +342,58 @@ function Workspace() {
       } else throw e;
     }
   };
-  function priceSnapshot(x: Pool) {
-    const first = equal(x.tokenA, config.tokens[0].address);
+  function priceSnapshot(x: Pool, inputToken: string) {
+    const first = equal(x.tokenA, inputToken);
     return {
-      reserveCTA: formatEther(first ? x.reserveA : x.reserveB),
-      reserveCTB: formatEther(first ? x.reserveB : x.reserveA),
-      priceCTBperCTA:
+      reserveInput: formatEther(first ? x.reserveA : x.reserveB),
+      reserveMiddle: formatEther(first ? x.reserveB : x.reserveA),
+      priceMiddlePerInput:
         Number(first ? x.reserveB : x.reserveA) /
         Number(first ? x.reserveA : x.reserveB),
     };
   }
   useEffect(() => {
+    const eth = (window as any).ethereum;
+    if (account !== "external" || !eth?.on) return;
+    const changed = () => {
+      activeSigner.current = undefined;
+      setSigner(undefined);
+      setAddress("");
+      setBalances({});
+      setEth(0n);
+      setAuto(false);
+      setWatch(false);
+      setNotice("钱包账户或网络已变化，请重新连接钱包。");
+    };
+    eth.on("accountsChanged", changed);
+    eth.on("chainChanged", changed);
+    return () => {
+      eth.removeListener?.("accountsChanged", changed);
+      eth.removeListener?.("chainChanged", changed);
+    };
+  }, [account]);
+  useEffect(() => {
     if (!watch || page !== "套利") return;
+    let cancelled = false;
     const id = setInterval(() => {
-      if (!busy) {
+      if (!pending.current) {
         void find()
           .then((list) => {
-            if (auto && list[0] && list[0].profit >= parseEther(minProfit))
+            if (
+              !cancelled &&
+              auto &&
+              list[0] &&
+              list[0].profit >= positiveAmount(minProfit, "最低利润")
+            )
               void act("自动套利", () => executeArb());
           })
           .catch((e) => setError(errorText(e)));
       }
     }, 5000);
-    return () => clearInterval(id);
+    return () => {
+      cancelled = true;
+      clearInterval(id);
+    };
   }, [watch, auto, page, busy, arbInput, arbAmount, minProfit, signer, all]);
   const mine = nfts.filter((n) => equal(n.owner, address)),
     out = p ? (equal(input, p.tokenA) ? p.tokenB : p.tokenA) : "";
@@ -339,7 +432,7 @@ function Workspace() {
             setPage("兑换");
           }}
         >
-          Tidal
+          潮汐交易所
         </a>
         <nav aria-label="主导航">
           {pages.map((x) => (
@@ -355,7 +448,7 @@ function Workspace() {
         <div className="wallet">
           <div className="network">
             <span className="dot" />
-            Hardhat · 31337 <small>区块 #{block}</small>
+            本地网络 31337 <small>区块 #{block}</small>
           </div>
           <select
             aria-label="本地账户"
@@ -375,12 +468,17 @@ function Workspace() {
           <button
             disabled={!!busy}
             onClick={() =>
-              void act("连接钱包", async () => {
-                const s = await wallet();
-                setSigner(s);
-                setAccount("external");
-                await refresh(s);
-              })
+              void act(
+                "连接钱包",
+                async () => {
+                  const s = await wallet();
+                  activeSigner.current = s;
+                  setSigner(s);
+                  setAccount("external");
+                  await refresh(s);
+                },
+                false,
+              )
             }
           >
             连接钱包
@@ -417,7 +515,7 @@ function Workspace() {
             disabled={!!busy}
             onClick={() => void refresh()}
           >
-            ↻ 刷新链上状态
+            刷新链上状态
           </button>
         </div>
         <section className="metrics">
@@ -445,13 +543,13 @@ function Workspace() {
           <div>
             <small>手续费分配</small>
             <strong>
-              0.30% <span>全部留给 LP</span>
+              0.30% <span>全部分配给流动性提供者</span>
             </strong>
           </div>
         </section>
         {busy && (
           <div className="message pending" role="status">
-            ◌ {busy} · {simProgress || "等待交易确认…"}
+            {busy}，{simProgress || "正在等待交易确认。"}
           </div>
         )}
         {error && (
@@ -461,7 +559,7 @@ function Workspace() {
         )}
         {notice && !busy && (
           <div className="message success" role="status">
-            ✓ {notice}
+            {notice}
           </div>
         )}
         {page === "兑换" && (
@@ -499,12 +597,17 @@ function Workspace() {
                   </select>
                 </div>
               </div>
+              {amountError && (
+                <p className="field-error" aria-live="polite">
+                  {amountError}
+                </p>
+              )}
               <button
                 className="flip"
                 aria-label="反转兑换方向"
                 onClick={() => setInput(out)}
               >
-                ↓
+                切换方向
               </button>
               <div className="token-box output">
                 <label>预计收到</label>
@@ -530,8 +633,9 @@ function Workspace() {
                 disabled={disabled || !p || quote <= 0n}
                 onClick={() =>
                   void act("兑换", async () => {
-                    const a = parseEther(amount),
+                    const a = positiveAmount(amount, "兑换数量"),
                       q = await dex(p!.address).quote(p!.id, input, a);
+                    await ensureBalance(input, a, signer!);
                     await approve(input, p!.address, a, signer!);
                     return dex(p!.address, signer).swap(
                       p!.id,
@@ -543,7 +647,7 @@ function Workspace() {
                   })
                 }
               >
-                授权并兑换 →
+                授权并兑换
               </button>
               <p className="fine">
                 先授权实际输入数量，再提交兑换。最终成交以区块确认结果为准。
@@ -608,11 +712,7 @@ function Workspace() {
                     disabled={disabled}
                     onClick={() =>
                       void act("包装 ETH", () =>
-                        new Contract(
-                          config.tokens[2].address,
-                          config.abis.WrappedETH,
-                          signer,
-                        ).deposit({ value: parseEther(wrap) }),
+                        depositETH(positiveAmount(wrap, "以太币数量"), signer!),
                       )
                     }
                   >
@@ -626,7 +726,7 @@ function Workspace() {
                           config.tokens[2].address,
                           config.abis.WrappedETH,
                           signer,
-                        ).withdraw(parseEther(wrap)),
+                        ).withdraw(positiveAmount(wrap, "以太币数量")),
                       )
                     }
                   >
@@ -679,8 +779,8 @@ function Workspace() {
                   disabled={disabled || !p}
                   onClick={() =>
                     void act("添加流动性并铸造 NFT", async () => {
-                      const a = parseEther(maxA),
-                        b = parseEther(maxB);
+                      const a = positiveAmount(maxA, "第一种代币投入"),
+                        b = positiveAmount(maxB, "第二种代币投入");
                       let va = a,
                         vb = b;
                       if (p!.reserveA && p!.reserveB) {
@@ -688,6 +788,8 @@ function Workspace() {
                         if (opt <= b) vb = opt;
                         else va = (b * p!.reserveA) / p!.reserveB;
                       }
+                      await ensureBalance(p!.tokenA, va, signer!);
+                      await ensureBalance(p!.tokenB, vb, signer!);
                       await approve(p!.tokenA, p!.address, a, signer!);
                       await approve(p!.tokenB, p!.address, b, signer!);
                       return dex(p!.address, signer).addLiquidity(
@@ -726,10 +828,10 @@ function Workspace() {
                   return (
                     <article className="nft" key={n.key}>
                       <div className="nft-art">
-                        <span>TIDAL POSITION</span>
+                        <span>流动性凭证</span>
                         <strong>#{String(n.id).padStart(3, "0")}</strong>
                         <small>
-                          {config.exchanges[n.exchange].name} · Pool{" "}
+                          {config.exchanges[n.exchange].name}，交易池{" "}
                           {String(n.poolId)}
                         </small>
                       </div>
@@ -778,12 +880,12 @@ function Workspace() {
                           <pre>
                             {JSON.stringify(
                               {
-                                poolId: String(n.poolId),
-                                shares: String(n.shares),
-                                depositedA: String(n.depositedA),
-                                depositedB: String(n.depositedB),
-                                createdAt: String(n.createdAt),
-                                owner: n.owner,
+                                交易池编号: String(n.poolId),
+                                流动性份额: String(n.shares),
+                                第一种代币投入: String(n.depositedA),
+                                第二种代币投入: String(n.depositedB),
+                                创建时间戳: String(n.createdAt),
+                                当前持有人: n.owner,
                               },
                               null,
                               2,
@@ -916,7 +1018,7 @@ function Workspace() {
                 快捷选择：
                 {config.tokens.map((t) => (
                   <button key={t.address} onClick={() => setCreateB(t.address)}>
-                    {t.symbol} → B
+                    {t.symbol} 设为第二种代币
                   </button>
                 ))}
               </div>
@@ -930,9 +1032,16 @@ function Workspace() {
                 disabled={disabled}
                 onClick={() =>
                   void act("创建交易池", async () => {
-                    for (const t of [createA, createB])
+                    if (!isAddress(createA) || !isAddress(createB))
+                      throw Error("请输入有效的代币合约地址。");
+                    if (equal(createA, createB))
+                      throw Error("请选择两个不同的代币。");
+                    for (const t of [createA, createB]) {
+                      if ((await rpc.getCode(t)) === "0x")
+                        throw Error("代币地址必须是已部署的合约地址。");
                       if (Number(await token(t).decimals()) !== 18)
-                        throw Error("当前界面仅支持 18 位小数 ERC20");
+                        throw Error("当前界面仅支持 18 位小数代币。");
+                    }
                     return dex(
                       config.exchanges[Number(createEx)].address,
                       signer,
@@ -961,7 +1070,7 @@ function Workspace() {
                       setPage("流动性");
                     }}
                   >
-                    {x.totalShares ? "添加流动性" : "注入初始流动性"} ↗
+                    {x.totalShares ? "添加流动性" : "注入初始流动性"}
                   </button>
                 </div>
               ))}
@@ -1047,7 +1156,7 @@ function Workspace() {
                   disabled={disabled}
                   onClick={() => void act("执行原子套利", () => executeArb())}
                 >
-                  执行最优路径 →
+                  执行最优路径
                 </button>
                 <button
                   className="wide danger"
@@ -1060,7 +1169,7 @@ function Workspace() {
                 </button>
                 <p className="fine">
                   报价已扣除两次 0.3% 兑换手续费；利润以本金代币计，未折算 ETH
-                  gas 成本。测试回滚仍消耗 gas。
+                  交易费用。回滚交易仍需支付交易费用。
                 </p>
               </section>
               <section className="card">
@@ -1090,7 +1199,7 @@ function Workspace() {
                         {sym(o.middle)} → {fmt(o.output, 6)} {sym(o.input)}
                       </p>
                       <small>
-                        Pool #{o.buy.id} → #{o.sell.id}
+                        交易池 {o.buy.id} 到交易池 {o.sell.id}
                       </small>
                     </div>
                   ))
@@ -1098,15 +1207,15 @@ function Workspace() {
                 {failure && (
                   <div className="rollback">
                     <h4>
-                      ↶ 回滚验证：
+                      {failure.saved ? "历史回滚验证：" : "回滚验证："}
                       {failure.poolsUnchanged && failure.balanceUnchanged
                         ? "通过"
                         : "检查失败"}
                     </h4>
                     <p>
-                      两个池储备未变：{String(failure.poolsUnchanged)}
+                      两个池储备未变：{failure.poolsUnchanged ? "是" : "否"}
                       <br />
-                      本金代币余额未变：{String(failure.balanceUnchanged)}
+                      本金代币余额未变：{failure.balanceUnchanged ? "是" : "否"}
                     </p>
                     {failure.receiptHash && <code>{failure.receiptHash}</code>}
                   </div>
@@ -1120,40 +1229,41 @@ function Workspace() {
                     {arbResult.saved ? "已保存的套利验证记录" : "本次套利结果"}
                   </h3>
                   <span>
-                    区块 #{arbResult.block} · status {arbResult.status}
+                    区块 {arbResult.block}，状态：
+                    {arbResult.status === 1 ? "成功" : "失败"}
                   </span>
                 </div>
                 <div className="result-summary">
                   <div>
                     <small>输入本金</small>
                     <strong>
-                      {fmt(arbResult.inputCTB)} {arbResult.inputSymbol || "CTB"}
+                      {fmt(arbResult.amountIn)} {arbResult.inputSymbol || "CTB"}
                     </strong>
                   </div>
                   <div>
                     <small>中间获得</small>
                     <strong>
-                      {fmt(arbResult.intermediateCTA)}{" "}
+                      {fmt(arbResult.intermediateAmount)}{" "}
                       {arbResult.middleSymbol || "CTA"}
                     </strong>
                   </div>
                   <div>
                     <small>回收本金与收益</small>
                     <strong>
-                      {fmt(arbResult.outputCTB)}{" "}
+                      {fmt(arbResult.amountOut)}{" "}
                       {arbResult.inputSymbol || "CTB"}
                     </strong>
                   </div>
                   <div>
                     <small>净代币利润</small>
                     <strong className="positive">
-                      +{fmt(arbResult.profitCTB, 6)}
+                      +{fmt(arbResult.profit, 6)}
                     </strong>
                   </div>
                 </div>
                 <div className="fine">
-                  账户余额 {fmt(arbResult.balanceBeforeCTB)} →{" "}
-                  {fmt(arbResult.balanceAfterCTB)} ·{" "}
+                  账户余额 {fmt(arbResult.balanceBefore)} →{" "}
+                  {fmt(arbResult.balanceAfter)} ·{" "}
                   {config.exchanges[arbResult.buy]?.name} →{" "}
                   {config.exchanges[arbResult.sell]?.name}
                 </div>
@@ -1162,26 +1272,29 @@ function Workspace() {
                     <thead>
                       <tr>
                         <th>交易所</th>
-                        <th>CTA 储备 前 → 后</th>
-                        <th>CTB 储备 前 → 后</th>
-                        <th>CTB / CTA 价格 前 → 后</th>
+                        <th>{arbResult.inputSymbol} 储备，交易前到交易后</th>
+                        <th>{arbResult.middleSymbol} 储备，交易前到交易后</th>
+                        <th>
+                          {arbResult.middleSymbol}/{arbResult.inputSymbol}{" "}
+                          价格，交易前到交易后
+                        </th>
                       </tr>
                     </thead>
                     <tbody>
                       {arbResult.before?.map((b: any, i: number) => (
                         <tr key={i}>
-                          <td>{config.exchanges[i]?.name}</td>
+                          <td>{arbResult.poolLabels[i]}</td>
                           <td>
-                            {fmt(b.reserveCTA)} →{" "}
-                            {fmt(arbResult.after[i].reserveCTA)}
+                            {fmt(b.reserveInput)} →{" "}
+                            {fmt(arbResult.after[i].reserveInput)}
                           </td>
                           <td>
-                            {fmt(b.reserveCTB)} →{" "}
-                            {fmt(arbResult.after[i].reserveCTB)}
+                            {fmt(b.reserveMiddle)} →{" "}
+                            {fmt(arbResult.after[i].reserveMiddle)}
                           </td>
                           <td>
-                            {fmt(b.priceCTBperCTA, 6)} →{" "}
-                            {fmt(arbResult.after[i].priceCTBperCTA, 6)}
+                            {fmt(b.priceMiddlePerInput, 6)} →{" "}
+                            {fmt(arbResult.after[i].priceMiddlePerInput, 6)}
                           </td>
                         </tr>
                       ))}
@@ -1201,7 +1314,7 @@ function Workspace() {
                 <span>固定种子 2026 · 可复现</span>
               </div>
               <p className="muted">
-                本地账户 01–20
+                本地账户 01 至 20
                 分别领取代币，随机选择交易所和兑换方向，依次完成兑换、添加流动性、销毁
                 NFT 撤回。所有操作逐笔确认。
               </p>
@@ -1258,7 +1371,7 @@ function Workspace() {
                           type: "application/json",
                         }),
                       );
-                      a.download = "simulation.json";
+                      a.download = "多账户模拟报告.json";
                       a.click();
                       URL.revokeObjectURL(a.href);
                     }}
@@ -1286,8 +1399,8 @@ function Workspace() {
                             <tr key={i}>
                               <td>{o.user}</td>
                               <td>{short(o.address)}</td>
-                              <td>{o.kind}</td>
-                              <td>{o.exchange === 0 ? "East" : "West"}</td>
+                              <td>{operationName(o.kind)}</td>
+                              <td>{config.exchanges[o.exchange]?.name}</td>
                               <td>{o.block}</td>
                               <td>
                                 <code title={o.hash}>{short(o.hash)}</code>
@@ -1310,7 +1423,7 @@ function Workspace() {
                 </div>
               ))}
               <div className="contract-address">
-                <b>AtomicArbitrage</b>
+                <b>原子套利合约</b>
                 <code>{config.arbitrage}</code>
               </div>
             </section>
@@ -1323,7 +1436,7 @@ function Workspace() {
           </div>
           {logs.length === 0 ? (
             <p className="muted">
-              完成一次操作后，这里会显示交易哈希、确认区块和 gas 用量。
+              完成一次操作后，这里会显示交易哈希、确认区块和燃料消耗。
             </p>
           ) : (
             logs.map((l, i) => (
@@ -1331,12 +1444,12 @@ function Workspace() {
                 <span
                   className={l.status === "已回滚" ? "negative" : "positive"}
                 >
-                  ● {l.status}
+                  {l.status}
                 </span>
                 <b>{l.label}</b>
                 <code title={l.hash}>{l.hash}</code>
                 <small>
-                  #{l.block} · gas {l.gas}
+                  区块 {l.block}，燃料消耗 {l.gas}
                 </small>
               </div>
             ))
@@ -1344,9 +1457,9 @@ function Workspace() {
         </section>
         <footer>
           <span>
-            tidal. <i /> 杨金潼 · 3230105308 · 作业 2
+            潮汐交易所 <i /> 杨金潼，3230105308，作业二
           </span>
-          <span>本地演示账户由 Hardhat 节点解锁，仅用于课程测试。</span>
+          <span>本地账户由测试节点提供，仅用于课程实验。</span>
         </footer>
       </main>
     </div>
@@ -1378,7 +1491,7 @@ function PoolCard({ p, sym }: { p?: Pool; sym: (a: string) => string }) {
               1 {sym(p.tokenA)} ≈{" "}
               {p.reserveA
                 ? fmt(Number(p.reserveB) / Number(p.reserveA), 6)
-                : "—"}{" "}
+                : "暂无"}{" "}
               {sym(p.tokenB)}
             </b>
           </div>

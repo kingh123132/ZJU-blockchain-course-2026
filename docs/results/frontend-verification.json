@@ -27,6 +27,10 @@
       "confirmed": true
     },
     {
+      "action": "解包 WETH",
+      "confirmed": true
+    },
+    {
       "action": "创建交易池",
       "confirmed": true
     },
@@ -35,7 +39,7 @@
       "confirmed": true
     },
     {
-      "action": "授权并兑换 →",
+      "action": "授权并兑换",
       "confirmed": true
     },
     {
@@ -47,7 +51,7 @@
       "confirmed": true
     },
     {
-      "action": "执行最优路径 →",
+      "action": "执行最优路径",
       "confirmed": true
     },
     {
@@ -58,78 +62,85 @@
   "receipts": [
     {
       "label": "原子套利",
-      "hash": "0x35aeeaf035985eb612680f4500b61dc35c0bce1dc97b225cee1aaf6f7b5ba8c1",
-      "block": 249,
+      "hash": "0x0a07bfee133c61eed5de5f19b812dcb12180b2d7010b8d4d6dba5f6ded1c579e",
+      "block": 553,
       "status": 1,
-      "gasUsed": "222180"
+      "gasUsed": "222135"
     },
     {
       "label": "套利回滚验证",
-      "hash": "0x4fb580f9363f587674b74feb2909ed29cb3dba37dfe4531884bced75bfce9866",
-      "block": 248,
+      "hash": "0xb8b06d2341045baee25240ee7664ba4082c9fc6cecf5fd3b47b55d13c4fc609d",
+      "block": 552,
       "status": 0,
-      "gasUsed": "217463"
+      "gasUsed": "217518"
     },
     {
       "label": "原子套利",
-      "hash": "0x0986a61262f5fd392776bb0f07c43f45fe9e0b5adc2504eaf27bf7aea8f63053",
-      "block": 246,
+      "hash": "0x18cc6001d5ef2469c886a8b9ac56750c80d13447edf3bb48040d274a73e473e3",
+      "block": 550,
       "status": 1,
-      "gasUsed": "222180"
+      "gasUsed": "222135"
     },
     {
       "label": "销毁 NFT 并撤回流动性",
-      "hash": "0xa23940ad7575ce1b8e95207812c69d929e5bceffc0a6d42ce2555c91d549067f",
-      "block": 244,
+      "hash": "0x7195b1fee94627a2d96bfbca4b2db51d739d1b4953a6b396776e539b24352576",
+      "block": 548,
       "status": 1,
       "gasUsed": "102040"
     },
     {
       "label": "兑换",
-      "hash": "0x226d95c411613c9e2e37486548ffed6958b56e9723d9726d3236311be643742f",
-      "block": 243,
+      "hash": "0xa54487b3e7a2f2935e7a76661a4c826a4400e450986dfd9e52e11d858a79a2cd",
+      "block": 547,
       "status": 1,
       "gasUsed": "101482"
     },
     {
       "label": "添加流动性并铸造 NFT",
-      "hash": "0xd78c0b4b8b847d50583bfe480b6d5318db65c2333339f1ecd47b4a5c7d7913c0",
-      "block": 241,
+      "hash": "0x6da6f47fac2c078775a5640c89c38d4f65b41a18b3bf30add4fc55d5fff7c853",
+      "block": 545,
       "status": 1,
       "gasUsed": "339969"
     },
     {
       "label": "创建交易池",
-      "hash": "0xd8ce0e26763d7448f37785db4621680b3fd665aa0ffec164a7470a2ae63d7b6f",
-      "block": 238,
+      "hash": "0x5b7134bc43b88171586d3bd38bfa24122cc36f0a06bd77643758983bcdf48f2b",
+      "block": 542,
       "status": 1,
       "gasUsed": "135503"
     },
     {
+      "label": "解包 WETH",
+      "hash": "0xbd4a2916103f41192b6e85297b63ef98819f5cf244f27bafb4ceea15e1bc8a41",
+      "block": 541,
+      "status": 1,
+      "gasUsed": "40343"
+    },
+    {
       "label": "包装 ETH",
-      "hash": "0xd2d2474ec6cdceb6b2f204f7743ae09a4f62745034830572b5424cad531d0037",
-      "block": 237,
+      "hash": "0x297e47b76b9f4d708798779adbaf2b5feb7b5c7476aaa51d62c8bfc7f6c6d693",
+      "block": 540,
       "status": 1,
       "gasUsed": "50425"
     },
     {
       "label": "领取测试 ETH",
-      "hash": "0x40de6415eb6a0adce7de45ca65464c1d4d66e3062e2cb382d39bcaa7934bc029",
-      "block": 236,
+      "hash": "0x805c4c08cf528b0fe207e75b5ddd4b33cd39fa7925d69ddf6cd30261e1bb3e0e",
+      "block": 539,
       "status": 1,
       "gasUsed": "21000"
     },
     {
       "label": "领取 CTB",
-      "hash": "0xad50697e3d625c1b54aacd07bf52b0fc47474196830905b3fc739ba2d2b99662",
-      "block": 235,
+      "hash": "0xa3c46c5b3fbaa500dd4645f0cdf5b665ccd7e1622240348fd5d450fa38e1ebf3",
+      "block": 538,
       "status": 1,
       "gasUsed": "72712"
     },
     {
       "label": "领取 CTA",
-      "hash": "0xfaf8550c11f794996acc785bb2b2547e7339f3db47c2b07cf2ab0323a3f115fb",
-      "block": 234,
+      "hash": "0x2e76259d43dfcd6135b0bd252f54a30d7b1260c5161c23d64ffca204e6437401",
+      "block": 537,
       "status": 1,
       "gasUsed": "72712"
     }
@@ -140,5 +151,172 @@
     "operations": 60,
     "failed": 0
   },
-  "durationSeconds": 83.027
+  "durationSeconds": 81.786,
+  "contractTests": {
+    "passed": 17,
+    "failed": 0
+  },
+  "interactionChecks": {
+    "passed": 35,
+    "failed": 0,
+    "walletProvider": "本地 EIP-1193 测试提供器",
+    "cases": [
+      {
+        "项目": "授权并兑换",
+        "预期提示": "代币余额不足",
+        "通过": true
+      },
+      {
+        "项目": "包装 ETH",
+        "预期提示": "以太币数量格式不正确",
+        "通过": true
+      },
+      {
+        "项目": "包装 ETH",
+        "预期提示": "以太币数量必须大于零",
+        "通过": true
+      },
+      {
+        "项目": "包装 ETH",
+        "预期提示": "最多支持 18 位小数",
+        "通过": true
+      },
+      {
+        "项目": "包装 ETH",
+        "预期提示": "以太币余额不足",
+        "通过": true
+      },
+      {
+        "项目": "解包 WETH",
+        "预期提示": "代币余额不足",
+        "通过": true
+      },
+      {
+        "项目": "未安装钱包扩展",
+        "通过": true
+      },
+      {
+        "项目": "创建交易池",
+        "预期提示": "有效的代币合约地址",
+        "通过": true
+      },
+      {
+        "项目": "创建交易池",
+        "预期提示": "两个不同的代币",
+        "通过": true
+      },
+      {
+        "项目": "创建交易池",
+        "预期提示": "已部署的合约地址",
+        "通过": true
+      },
+      {
+        "项目": "创建交易池",
+        "预期提示": "已经有这个代币对",
+        "通过": true
+      },
+      {
+        "项目": "授权并添加流动性",
+        "预期提示": "必须大于零",
+        "通过": true
+      },
+      {
+        "项目": "授权并添加流动性",
+        "预期提示": "代币余额不足",
+        "通过": true
+      },
+      {
+        "项目": "扫描价差",
+        "预期提示": "套利本金格式不正确",
+        "通过": true
+      },
+      {
+        "项目": "执行最优路径",
+        "预期提示": "最低利润必须大于零",
+        "通过": true
+      },
+      {
+        "项目": "执行最优路径",
+        "预期提示": "代币余额不足",
+        "通过": true
+      },
+      {
+        "项目": "连续点击只发送一笔领取交易",
+        "通过": true
+      },
+      {
+        "项目": "领取 CTA",
+        "预期提示": "领取间隔为 60 秒",
+        "通过": true
+      },
+      {
+        "项目": "已有池按比例投入并保留剩余额度，资金来源可以筛选",
+        "通过": true
+      },
+      {
+        "项目": "空池不允许兑换",
+        "通过": true
+      },
+      {
+        "项目": "自建代币对套利显示实际池编号、代币和储备",
+        "通过": true
+      },
+      {
+        "项目": "钱包拒绝请求时显示中文提示",
+        "通过": true
+      },
+      {
+        "项目": "钱包网络不正确时禁止连接",
+        "通过": true
+      },
+      {
+        "项目": "连接钱包后显示实际签名地址",
+        "通过": true
+      },
+      {
+        "项目": "钱包切换账户后停用旧签名并重新连接",
+        "通过": true
+      },
+      {
+        "项目": "兑换页文本检查",
+        "通过": true
+      },
+      {
+        "项目": "流动性页文本检查",
+        "通过": true
+      },
+      {
+        "项目": "创建交易池页文本检查",
+        "通过": true
+      },
+      {
+        "项目": "套利页文本检查",
+        "通过": true
+      },
+      {
+        "项目": "模拟与记录页文本检查",
+        "通过": true
+      },
+      {
+        "项目": "桌面页脚字号不小于 13 像素",
+        "通过": true
+      },
+      {
+        "项目": "报告导出使用中文文件名",
+        "通过": true
+      },
+      {
+        "项目": "390 像素宽度无页面横向溢出",
+        "通过": true
+      },
+      {
+        "项目": "768 像素宽度无页面横向溢出",
+        "通过": true
+      },
+      {
+        "项目": "1920 像素宽度无页面横向溢出",
+        "通过": true
+      }
+    ]
+  }
 }

@@ -4,11 +4,11 @@ const path = require("node:path");
 async function main() {
   const { ethers } = hre;
   const [owner] = await ethers.getSigners();
-  const a = await ethers.deployContract("TestToken", ["Campus Token A", "CTA"]);
-  const b = await ethers.deployContract("TestToken", ["Campus Token B", "CTB"]);
+  const a = await ethers.deployContract("TestToken", ["校园代币甲", "CTA"]);
+  const b = await ethers.deployContract("TestToken", ["校园代币乙", "CTB"]);
   const weth = await ethers.deployContract("WrappedETH");
-  const east = await ethers.deployContract("MiniDEX", ["East Exchange LP"]);
-  const west = await ethers.deployContract("MiniDEX", ["West Exchange LP"]);
+  const east = await ethers.deployContract("MiniDEX", ["东池流动性凭证"]);
+  const west = await ethers.deployContract("MiniDEX", ["西池流动性凭证"]);
   const arb = await ethers.deployContract("AtomicArbitrage");
   for (const c of [a, b, weth, east, west, arb]) await c.waitForDeployment();
   for (const t of [a, b]) await (await t.faucet()).wait();
@@ -43,8 +43,8 @@ async function main() {
       { symbol: "WETH", address: weth.target },
     ],
     exchanges: [
-      { name: "东池 East", address: east.target },
-      { name: "西池 West", address: west.target },
+      { name: "东池", address: east.target },
+      { name: "西池", address: west.target },
     ],
     arbitrage: arb.target,
     abis: {},
@@ -73,7 +73,7 @@ async function main() {
       2,
     ),
   );
-  console.log("Local deployment ready", config.exchanges);
+  console.log("本地合约部署完成", config.exchanges);
 }
 main().catch((e) => {
   console.error(e);

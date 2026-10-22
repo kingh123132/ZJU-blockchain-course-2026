@@ -7,3 +7,10 @@ frontend/build/
 *.log
 .env
 submission/
+
+*.tmp
+*.tsbuildinfo
+.DS_Store
+Thumbs.db
+test-results/
+playwright-report/

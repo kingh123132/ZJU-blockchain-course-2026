@@ -4,9 +4,8 @@
 课程提交用公开 fork 仓库：
 https://github.com/kingh123132/ZJU-blockchain-course-2026
 
-新建公开项目仓库：
+公开项目仓库：
 https://github.com/kingh123132/tidal-dex-amm-arbitrage
 
 视频：3230105308_杨金潼_作业2.mp4
-时长约 87 秒，含操作步骤字幕。
-README 包含运行方法、实现分析和截图；原始实验记录位于 docs/results。
+README 包含运行方法、实现分析和实际运行截图，实验记录位于 docs/results。

@@ -4,108 +4,108 @@
     {
       "index": 1,
       "address": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
-      "eth": "9999.999655231545823456"
+      "eth": "9999.998171787533543852"
     },
     {
       "index": 2,
       "address": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
-      "eth": "9999.999663078400826984"
+      "eth": "9999.998304586389649823"
     },
     {
       "index": 3,
       "address": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
-      "eth": "9999.999666611131655286"
+      "eth": "9999.998325255120752512"
     },
     {
       "index": 4,
       "address": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
-      "eth": "9999.99966820160147382"
+      "eth": "9999.998309594590501951"
     },
     {
       "index": 5,
       "address": "0x9965507D1a55bcC2695C58ba16FB37d819B0A4dc",
-      "eth": "9999.999668917646898998"
+      "eth": "9999.998327575636168262"
     },
     {
       "index": 6,
       "address": "0x976EA74026E726554dB657fA54763abd0C3a0aa9",
-      "eth": "9999.999669240017534436"
+      "eth": "9999.998327659006801788"
     },
     {
       "index": 7,
       "address": "0x14dC79964da2C08b23698B3D3cc7Ca32193d9955",
-      "eth": "9999.999669385151810836"
+      "eth": "9999.9983280431410801"
     },
     {
       "index": 8,
       "address": "0x23618e81E3f5cdF7f54C3d65f7FBc0aBf5B21E8f",
-      "eth": "9999.99966945049273264"
+      "eth": "9999.9983278454819998"
     },
     {
       "index": 9,
       "address": "0xa0Ee7A142d267C1f36714E4a8F75612F20a79720",
-      "eth": "9999.999669479909738878"
+      "eth": "9999.998327924899006438"
     },
     {
       "index": 10,
       "address": "0xBcd4042DE499D14e55001CcbB24a551F3b954096",
-      "eth": "9999.999669493153597778"
+      "eth": "9999.99832796214286553"
     },
     {
       "index": 11,
       "address": "0x71bE63f3384f5fb98995898A86B02Fb2426c5788",
-      "eth": "9999.999669499116030498"
+      "eth": "9999.99832796810529825"
     },
     {
       "index": 12,
       "address": "0xFABB0ac9d68B0B445fB7357272Ff202C5651694a",
-      "eth": "9999.999669501800373182"
+      "eth": "9999.998328171789642542"
     },
     {
       "index": 13,
       "address": "0x1CBd3b2770909D4e10f157cABC84C7264073C9Ec",
-      "eth": "9999.99966950300903961"
+      "eth": "9999.99831084799817037"
     },
     {
       "index": 14,
       "address": "0xdF3e18d64BC6A983f673Ab319CCaE4f1a57C7097",
-      "eth": "9999.99966950355323861"
+      "eth": "9999.998328010542506666"
     },
     {
       "index": 15,
       "address": "0xcd3B766CCDd6AE721141F452C550Ca635964ce71",
-      "eth": "9999.99966950379801249"
+      "eth": "9999.998328111787281354"
     },
     {
       "index": 16,
       "address": "0x2546BcD3c84621e976D8185a91A922aE77ECEc30",
-      "eth": "9999.999669503908246986"
+      "eth": "9999.99832811189751585"
     },
     {
       "index": 17,
       "address": "0xbDA5747bFD65F08deb54cb465eB87D40e51B197E",
-      "eth": "9999.999669503957934148"
+      "eth": "9999.998327910947201404"
     },
     {
       "index": 18,
       "address": "0xdD2FD4581271e230360230F9337D5c0430Bf44C0",
-      "eth": "9999.99966950398017671"
+      "eth": "9999.998328022969444862"
     },
     {
       "index": 19,
       "address": "0x8626f6940E2eb28930eFb4CeF49B2d1F2C9C1199",
-      "eth": "9999.999669503990184204"
+      "eth": "9999.998328061979452668"
     },
     {
       "index": 20,
       "address": "0x09DB0a93B389bEF724429898f539AEB7ac2Dd55f",
-      "eth": "9999.999669503994632714"
+      "eth": "9999.998327898983899874"
     }
   ],
   "rounds": 4,
-  "startBlock": 21,
-  "endBlock": 221,
-  "durationSeconds": 41.726,
+  "startBlock": 332,
+  "endBlock": 532,
+  "durationSeconds": 41.669,
   "counts": {
     "users": 20,
     "swap": 40,
@@ -144,8 +144,8 @@
       "address": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
       "exchange": 0,
       "kind": "swap",
-      "hash": "0x0e0c87d06aa954f168675a833d9df47af1a844252b940877572b7991731c4bcb",
-      "block": 142,
+      "hash": "0x972d5a2fbad8c9fe5c8d541f167aaa9ea051ef22875be0987321c8e2159919d2",
+      "block": 453,
       "status": 1
     },
     {
@@ -154,8 +154,8 @@
       "address": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
       "exchange": 1,
       "kind": "swap",
-      "hash": "0x6ac3c2e45e195e29d9fc288b1b6a620dfc403d4e99cdd01d8511d8792a57501e",
-      "block": 143,
+      "hash": "0xbfffa1913a2fed68ad108e480989dd6885e5d2c94e078ac8ce9a66af32783ad2",
+      "block": 454,
       "status": 1
     },
     {
@@ -164,8 +164,8 @@
       "address": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
       "exchange": 1,
       "kind": "swap",
-      "hash": "0x83f458735cfbdb436bcd93c2b329c681515c6abe4f5826ee394e0795052ec6ba",
-      "block": 144,
+      "hash": "0x97bb9c36e2b2b3a3585c5859b36087e093690a10b3d9856ae74fdc4356255ecb",
+      "block": 455,
       "status": 1
     },
     {
@@ -174,8 +174,8 @@
       "address": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
       "exchange": 1,
       "kind": "swap",
-      "hash": "0x991c99a90796b83cdfeab6eb02cc67d28deea4b6542cbd16a27059d585194c1f",
-      "block": 145,
+      "hash": "0xb5a4cfd069121dff19d6bd0bb4097043e6e9734bec244e6ea1c7bf065c840a83",
+      "block": 456,
       "status": 1
     },
     {
@@ -184,8 +184,8 @@
       "address": "0x9965507D1a55bcC2695C58ba16FB37d819B0A4dc",
       "exchange": 1,
       "kind": "swap",
-      "hash": "0x11b5b9357e6e05e9960bc2f6cc818cc570d5816707138c283d8f41a775d04278",
-      "block": 146,
+      "hash": "0xfbe7310bc496328c62710d8622ba3c7b71e0dbbea8be864b4c0ed228555e9131",
+      "block": 457,
       "status": 1
     },
     {
@@ -194,8 +194,8 @@
       "address": "0x976EA74026E726554dB657fA54763abd0C3a0aa9",
       "exchange": 1,
       "kind": "swap",
-      "hash": "0x70f0eb5308d621e565eb32060f7fc6b8e9f291ec96963165a6bb0b7982ed2904",
-      "block": 147,
+      "hash": "0xb38586340b33ad1cbf1f802252706b4b3308886cdbca3f2e61a1d37c9f41ec70",
+      "block": 458,
       "status": 1
     },
     {
@@ -204,8 +204,8 @@
       "address": "0x14dC79964da2C08b23698B3D3cc7Ca32193d9955",
       "exchange": 0,
       "kind": "swap",
-      "hash": "0xf02b4bb1f806825f05dad5ccb5eaf8ca4ecb1301dba38aceaec77b927999c82b",
-      "block": 148,
+      "hash": "0x2c444b7a1cc5f5138cf706b5f567f9ff2e0ccb3dff7341417b11e37f6a4cc273",
+      "block": 459,
       "status": 1
     },
     {
@@ -214,8 +214,8 @@
       "address": "0x23618e81E3f5cdF7f54C3d65f7FBc0aBf5B21E8f",
       "exchange": 1,
       "kind": "swap",
-      "hash": "0x9d83d2b5c1a2776b36597ee99de55e855f3d6e1a68438d08cfd4d178f5da661b",
-      "block": 149,
+      "hash": "0x3a35fb5bb57add47e546b7968a517d884609daf4a1c022403cb714a4775a78b7",
+      "block": 460,
       "status": 1
     },
     {
@@ -224,8 +224,8 @@
       "address": "0xa0Ee7A142d267C1f36714E4a8F75612F20a79720",
       "exchange": 1,
       "kind": "swap",
-      "hash": "0x3e6c32669ed63cf19b23ba7a9880a4499304cbe79aaa13fc8dd967940d643bd6",
-      "block": 150,
+      "hash": "0x0f2fc5dba79e0fd6c60d3301d4cca8e9224a0d5c9c3bb289d5299edacd6a158a",
+      "block": 461,
       "status": 1
     },
     {
@@ -234,8 +234,8 @@
       "address": "0xBcd4042DE499D14e55001CcbB24a551F3b954096",
       "exchange": 1,
       "kind": "swap",
-      "hash": "0x6d3a0720b83b61770b59b6a2ec78641db2008c3e7b82b456b4754c076b36d90d",
-      "block": 151,
+      "hash": "0x2f4e3ce85d4e2cd9f836b9074ed77cc3da4f229c79c5ef12e44abd910a7cad72",
+      "block": 462,
       "status": 1
     },
     {
@@ -244,8 +244,8 @@
       "address": "0x71bE63f3384f5fb98995898A86B02Fb2426c5788",
       "exchange": 1,
       "kind": "swap",
-      "hash": "0x651c5516a9e5af6e2fecee088da4c5f81cd8361b5570ce77c30c2242f8044b18",
-      "block": 152,
+      "hash": "0x31d82b8f79d8ec6ed12ba9bb4fda293235087b56b6a18d29aed447b714468aae",
+      "block": 463,
       "status": 1
     },
     {
@@ -254,8 +254,8 @@
       "address": "0xFABB0ac9d68B0B445fB7357272Ff202C5651694a",
       "exchange": 1,
       "kind": "swap",
-      "hash": "0xb8c580da64cae325cadfac97964b047686589d0cca5f8e28a15318234fbeb0d1",
-      "block": 153,
+      "hash": "0x9c7ade9fe9f0bbd0873f8d4ac6c46713f6280956825ac871c8ad8bed5ab1018c",
+      "block": 464,
       "status": 1
     },
     {
@@ -264,8 +264,8 @@
       "address": "0x1CBd3b2770909D4e10f157cABC84C7264073C9Ec",
       "exchange": 0,
       "kind": "swap",
-      "hash": "0xfdc616b9f148cdd07b892770a0d9e1fbe3c88b03ed5f6a8cd989141b275db5fd",
-      "block": 154,
+      "hash": "0xeedd4fac725de5cf829b65a27cf83d8138252e4447271e60ff23a83faa93b286",
+      "block": 465,
       "status": 1
     },
     {
@@ -274,8 +274,8 @@
       "address": "0xdF3e18d64BC6A983f673Ab319CCaE4f1a57C7097",
       "exchange": 0,
       "kind": "swap",
-      "hash": "0xf8be4a5b87b4607d35b670c6b154d789a9018c52f41ebcf44616ad0caf499e8e",
-      "block": 155,
+      "hash": "0xfefab1dcb680c79a6f78249ca75a990bad106d0e6b08e9d7a1279547cf5c38a5",
+      "block": 466,
       "status": 1
     },
     {
@@ -284,8 +284,8 @@
       "address": "0xcd3B766CCDd6AE721141F452C550Ca635964ce71",
       "exchange": 0,
       "kind": "swap",
-      "hash": "0x970a103e6f896fd386715b2a836634fa615952c877a507b7355f61e10fa3abd4",
-      "block": 156,
+      "hash": "0x57831fd2915101967d6d11058fdaa063a7614e49bdffdc9133d113bb73cfd319",
+      "block": 467,
       "status": 1
     },
     {
@@ -294,8 +294,8 @@
       "address": "0x2546BcD3c84621e976D8185a91A922aE77ECEc30",
       "exchange": 0,
       "kind": "swap",
-      "hash": "0x87ce34014d94b87920abea2d8bd6c0b811293f63f577eeea076dce9e46b56cae",
-      "block": 157,
+      "hash": "0xfd911b4843f195e97095b911ba300f0bd12dd23932353910a593e0333a437c2d",
+      "block": 468,
       "status": 1
     },
     {
@@ -304,8 +304,8 @@
       "address": "0xbDA5747bFD65F08deb54cb465eB87D40e51B197E",
       "exchange": 1,
       "kind": "swap",
-      "hash": "0x018d77b11926da35aabbb65716367406e1a5425e5341a2f3bb3b3e30521ba655",
-      "block": 158,
+      "hash": "0x76dcc953874869a2c5ce520c611a8d8bb708ea004eeac290cf9d0b31d5b48bee",
+      "block": 469,
       "status": 1
     },
     {
@@ -314,8 +314,8 @@
       "address": "0xdD2FD4581271e230360230F9337D5c0430Bf44C0",
       "exchange": 0,
       "kind": "swap",
-      "hash": "0xd5681a337e463f3e3517e246f04855e29ede99238ce24704d07a1ca62f3d6fef",
-      "block": 159,
+      "hash": "0x12ae986588e910dcf9bcd48aa01d5c6cbb13f052c9d3d4a898d10e1388d5bfcf",
+      "block": 470,
       "status": 1
     },
     {
@@ -324,8 +324,8 @@
       "address": "0x8626f6940E2eb28930eFb4CeF49B2d1F2C9C1199",
       "exchange": 0,
       "kind": "swap",
-      "hash": "0x3666b62960803c6b77dfa14fc36136a50a8ec83ae51b561ed8df43d3ee9c61a5",
-      "block": 160,
+      "hash": "0x88b808901a17a6f02bd2d05bb0bc90c8492775e566392ec0d194822cf0e20601",
+      "block": 471,
       "status": 1
     },
     {
@@ -334,8 +334,8 @@
       "address": "0x09DB0a93B389bEF724429898f539AEB7ac2Dd55f",
       "exchange": 0,
       "kind": "swap",
-      "hash": "0xb7f6a244d865744bb922557ad8dc3e0466ee2a6c8b5ba63f8078111941ac7746",
-      "block": 161,
+      "hash": "0x63f592304f7a0fc7cd9ec246227aef3f8dfa28c0ff0758cc6943345813666aaa",
+      "block": 472,
       "status": 1
     },
     {
@@ -344,8 +344,8 @@
       "address": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
       "exchange": 1,
       "kind": "add",
-      "hash": "0xb391bab5e63e7088b152701a4c2530d231c1447386792ee1bc065ceb8c8c213e",
-      "block": 162,
+      "hash": "0x7e2c1c4312e764031887761c614f3b093d6a822cf0fcfebed8535748f337e660",
+      "block": 473,
       "status": 1
     },
     {
@@ -354,8 +354,8 @@
       "address": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
       "exchange": 0,
       "kind": "add",
-      "hash": "0x3b07a8a5843388bf300575337f1d7bfa3dd51c72ea952104746dffa7be7e94a7",
-      "block": 163,
+      "hash": "0xef8e24ec645d003034dd53249ad6a99a2da4b16f70058d55519780454ee50c50",
+      "block": 474,
       "status": 1
     },
     {
@@ -364,8 +364,8 @@
       "address": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
       "exchange": 0,
       "kind": "add",
-      "hash": "0x9f3791389b457fe120e19e57d336cff6f6f8645ec535ab34cf676ed6746f3514",
-      "block": 164,
+      "hash": "0x21f9f1f8454b26e3effb044fa635ff656e9032ffb678c824d39f0471b11a84e2",
+      "block": 475,
       "status": 1
     },
     {
@@ -374,8 +374,8 @@
       "address": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
       "exchange": 1,
       "kind": "add",
-      "hash": "0x2a890c14fde0dc0c31f0afed816558d5148047ea30dd826a96de89cb9267b905",
-      "block": 165,
+      "hash": "0x474186df9fb86bbbf6510ec7504d7b2376dc92c66ab2aa6f6cb82b803ea688f8",
+      "block": 476,
       "status": 1
     },
     {
@@ -384,8 +384,8 @@
       "address": "0x9965507D1a55bcC2695C58ba16FB37d819B0A4dc",
       "exchange": 0,
       "kind": "add",
-      "hash": "0x72ffbfa1aa0c2c3c1751b02ed4d8710aeac5e49b2f5e6937ce9bc6230704a643",
-      "block": 166,
+      "hash": "0x2a1f80f98eefd96e0ba66ff1ffc862a1988e5de50fdb26cb9ac24ba05924f9a0",
+      "block": 477,
       "status": 1
     },
     {
@@ -394,8 +394,8 @@
       "address": "0x976EA74026E726554dB657fA54763abd0C3a0aa9",
       "exchange": 1,
       "kind": "add",
-      "hash": "0x8b0f90bbfb0dd98f15ae35a98b24ed0b8cf1bb32581700e7e6636830d791556d",
-      "block": 167,
+      "hash": "0x2fc3203ec4398da7061310bc53f429d19704d7239bedc3665f85ccfe83a6aa8f",
+      "block": 478,
       "status": 1
     },
     {
@@ -404,8 +404,8 @@
       "address": "0x14dC79964da2C08b23698B3D3cc7Ca32193d9955",
       "exchange": 0,
       "kind": "add",
-      "hash": "0xff4935c2aff53b499fd3d97e823d01b0e42d5d496b1fe98db9057f2d4a22e767",
-      "block": 168,
+      "hash": "0x976a7542fef66cd05418fdb6f806504c7ff21c74a6111954d77a291c924655ca",
+      "block": 479,
       "status": 1
     },
     {
@@ -414,8 +414,8 @@
       "address": "0x23618e81E3f5cdF7f54C3d65f7FBc0aBf5B21E8f",
       "exchange": 1,
       "kind": "add",
-      "hash": "0xbdc23786e9959492309c3a8c7b3a6fdc3c1af5bb886b2567a08373b922438268",
-      "block": 169,
+      "hash": "0xd63b8947e68946d059a4c5c7459b47b91bcb2210f265afab8a24f5e5fcb691ae",
+      "block": 480,
       "status": 1
     },
     {
@@ -424,8 +424,8 @@
       "address": "0xa0Ee7A142d267C1f36714E4a8F75612F20a79720",
       "exchange": 1,
       "kind": "add",
-      "hash": "0x3e9bc17debe747dae24bfb8fce7cf670f4c575ed9274ffd418eda0f0593238d8",
-      "block": 170,
+      "hash": "0xb5bc3619a2305bb6eff989b669efec55c7b1a1387de0e07009b9827ca5a62771",
+      "block": 481,
       "status": 1
     },
     {
@@ -434,8 +434,8 @@
       "address": "0xBcd4042DE499D14e55001CcbB24a551F3b954096",
       "exchange": 1,
       "kind": "add",
-      "hash": "0x9b6f26322562a9cb63ac52035be743b08f97cf922b3736c26ce5fc2605bfe517",
-      "block": 171,
+      "hash": "0x6b01e83a01c3b2b2f96425c2110aa3aaa4289b60b9a381f31413d0d3ae775cac",
+      "block": 482,
       "status": 1
     },
     {
@@ -444,8 +444,8 @@
       "address": "0x71bE63f3384f5fb98995898A86B02Fb2426c5788",
       "exchange": 1,
       "kind": "add",
-      "hash": "0xc70829c7a4a3fa1d3f1b26eeaab2eb9eee8fad21c3dbaa377c7014e855c1f8ae",
-      "block": 172,
+      "hash": "0x7dc5f43776448b4c68d61ff0fb9253e52c6f557a99ac42ed61270ddf693e25d1",
+      "block": 483,
       "status": 1
     },
     {
@@ -454,8 +454,8 @@
       "address": "0xFABB0ac9d68B0B445fB7357272Ff202C5651694a",
       "exchange": 0,
       "kind": "add",
-      "hash": "0x607d50806b83bab78a0e37abca5570707074710d8e7664a5d2c05fbfea15a9bd",
-      "block": 173,
+      "hash": "0xc607d02f471747e3f10fcf3f4af71d93b8262b6ef0ac4dad2239321743ffa3e5",
+      "block": 484,
       "status": 1
     },
     {
@@ -464,8 +464,8 @@
       "address": "0x1CBd3b2770909D4e10f157cABC84C7264073C9Ec",
       "exchange": 1,
       "kind": "add",
-      "hash": "0xa1008ea8ace65c53f3c145bee60f03e0f8ac05f276875f5b63402ab393d6de60",
-      "block": 174,
+      "hash": "0x715d984c65bfc3de87e0794ed423cbd82a6b818d970783e8fdaf8d06213bc017",
+      "block": 485,
       "status": 1
     },
     {
@@ -474,8 +474,8 @@
       "address": "0xdF3e18d64BC6A983f673Ab319CCaE4f1a57C7097",
       "exchange": 1,
       "kind": "add",
-      "hash": "0x5e643b01292a9d69ba5f3803bb1a91ee7ab48c87696b27b9341e94dd0a98bb28",
-      "block": 175,
+      "hash": "0xe6a42a452eaa1199d0965197382595e00dfd1346f15d7c8c67f97690cb2106d9",
+      "block": 486,
       "status": 1
     },
     {
@@ -484,8 +484,8 @@
       "address": "0xcd3B766CCDd6AE721141F452C550Ca635964ce71",
       "exchange": 0,
       "kind": "add",
-      "hash": "0x1191a3ca93ec099ba84cee9e1a8bbcff59fe70f79aa0ba0bd996e527b59188a6",
-      "block": 176,
+      "hash": "0x1e36b952e7017b117bcafddf5987aa3a3715e1a0fc0eb9eff0c3f62d37e921c2",
+      "block": 487,
       "status": 1
     },
     {
@@ -494,8 +494,8 @@
       "address": "0x2546BcD3c84621e976D8185a91A922aE77ECEc30",
       "exchange": 0,
       "kind": "add",
-      "hash": "0x694f913a5f22fbb980e66ae482d9d0035ddc00b268e650662f79d290c25d7555",
-      "block": 177,
+      "hash": "0x3bd9875e2c99fbf2ec73f7adef4d6d05ae8b1d34fa7d544068fc1240244def73",
+      "block": 488,
       "status": 1
     },
     {
@@ -504,8 +504,8 @@
       "address": "0xbDA5747bFD65F08deb54cb465eB87D40e51B197E",
       "exchange": 1,
       "kind": "add",
-      "hash": "0x9707b03bb3f7828aaa309d4dbd4e27a5d16393f027e442cbf08598277bca4c8f",
-      "block": 178,
+      "hash": "0xbbe24f42591903a03c5274c5247463f9bf949515fa01e553ae866ae746b43236",
+      "block": 489,
       "status": 1
     },
     {
@@ -514,8 +514,8 @@
       "address": "0xdD2FD4581271e230360230F9337D5c0430Bf44C0",
       "exchange": 1,
       "kind": "add",
-      "hash": "0xcc3a294793d3e632849753b56c2e2dddae22236ba9d7e1f69a348c2c55b4c7e0",
-      "block": 179,
+      "hash": "0x7e563a89b03bb56c095cfc180d0b0b11dca5919337e4ec083ac7f3980ffbe8a0",
+      "block": 490,
       "status": 1
     },
     {
@@ -524,8 +524,8 @@
       "address": "0x8626f6940E2eb28930eFb4CeF49B2d1F2C9C1199",
       "exchange": 0,
       "kind": "add",
-      "hash": "0x4bea7364c255ccd460f8b7be44652944eb213f219f90c6e27072d5c885dd4c4b",
-      "block": 180,
+      "hash": "0x6fd1f4b0a1927f89a299a58b713ea1ba5af624010fc47b7866f78a8bd794829e",
+      "block": 491,
       "status": 1
     },
     {
@@ -534,8 +534,8 @@
       "address": "0x09DB0a93B389bEF724429898f539AEB7ac2Dd55f",
       "exchange": 1,
       "kind": "add",
-      "hash": "0xf428d5a6e55a42554f5cf9f8de085d172c8aebce7297d9c4ca3d521eb5a66f41",
-      "block": 181,
+      "hash": "0x5f7172d6e361a3da9b4beec329f17127e792cff6f6255f3e5a92a7c8b4a1edfa",
+      "block": 492,
       "status": 1
     },
     {
@@ -544,8 +544,8 @@
       "address": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
       "exchange": 1,
       "kind": "remove",
-      "hash": "0x7625151cbf456e3c80eb507c1b91299344844b1203b4e2ebb30904dc2d323492",
-      "block": 182,
+      "hash": "0x952baecd1e314c4503380c9695cf01dd182f0d00b93233ca682ca9c4d4c648b8",
+      "block": 493,
       "status": 1
     },
     {
@@ -554,8 +554,8 @@
       "address": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
       "exchange": 0,
       "kind": "remove",
-      "hash": "0x6a9fb3fb5d696f21f7c33dac9dac08529f1c0cf7c2143da1f9189d87194305e0",
-      "block": 183,
+      "hash": "0x6bfe13874f92230a85b12885cf68f9e528dc7629dd83430767db2b79da863b2d",
+      "block": 494,
       "status": 1
     },
     {
@@ -564,8 +564,8 @@
       "address": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
       "exchange": 0,
       "kind": "remove",
-      "hash": "0x12f411e373353c3505d0f0e2d64c402557a42b880511c79d027f7f5fea72dfb3",
-      "block": 184,
+      "hash": "0x938d9c9d8e8e76009be8ea63f9ed6435338d01cad7c4d2574ffbef39c6d784f5",
+      "block": 495,
       "status": 1
     },
     {
@@ -574,8 +574,8 @@
       "address": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
       "exchange": 1,
       "kind": "remove",
-      "hash": "0x1cd0e48af9392c59928430ca67b66fe4ba236d53020909231887efaa1c65ce68",
-      "block": 185,
+      "hash": "0x6842b6e0b1fad217b0c83a908234cce2dabb9121503ae53b1a5308ab6097a065",
+      "block": 496,
       "status": 1
     },
     {
@@ -584,8 +584,8 @@
       "address": "0x9965507D1a55bcC2695C58ba16FB37d819B0A4dc",
       "exchange": 0,
       "kind": "remove",
-      "hash": "0xb32197a557907b93ff9ae07d874bb0364ab4ca867f648282866f1ff24c972eeb",
-      "block": 186,
+      "hash": "0xe577daf5ef1e063b4cb4f0d4d10d225a6e68c06cefda21e44705077561fe50d3",
+      "block": 497,
       "status": 1
     },
     {
@@ -594,8 +594,8 @@
       "address": "0x976EA74026E726554dB657fA54763abd0C3a0aa9",
       "exchange": 1,
       "kind": "remove",
-      "hash": "0xf9c6e24dbdab4bcd6a54fa9cebe9a92a1cab5f0652953cd5fa116d6315be91a4",
-      "block": 187,
+      "hash": "0x3cab462683b2ee8ca0deb11a44b16d61ddb764b0b735f87970da2e5b17f462af",
+      "block": 498,
       "status": 1
     },
     {
@@ -604,8 +604,8 @@
       "address": "0x14dC79964da2C08b23698B3D3cc7Ca32193d9955",
       "exchange": 0,
       "kind": "remove",
-      "hash": "0xe6b43c0eedf40b832da54706f371fd42711e1d79aa566ff90a7d3af7fb23f7bb",
-      "block": 188,
+      "hash": "0x03e20cd7bf7d9a272be1b13ec6cea2693d811b2522fc640fe6e9006080368777",
+      "block": 499,
       "status": 1
     },
     {
@@ -614,8 +614,8 @@
       "address": "0x23618e81E3f5cdF7f54C3d65f7FBc0aBf5B21E8f",
       "exchange": 1,
       "kind": "remove",
-      "hash": "0x608e0eb1ecc48c9988ae16ee0efedf28c91b637b050b3f80ae25155d3ecd9b4f",
-      "block": 189,
+      "hash": "0x5231b3efe8696eadfee3221ac3389da0cc00fb6e980ab5d26d80b950aa045cb9",
+      "block": 500,
       "status": 1
     },
     {
@@ -624,8 +624,8 @@
       "address": "0xa0Ee7A142d267C1f36714E4a8F75612F20a79720",
       "exchange": 1,
       "kind": "remove",
-      "hash": "0x012c935475d0bfdb8b560d45be0ec097803aca4816dd2cf90a866c2c98eefefb",
-      "block": 190,
+      "hash": "0x6165a90604eb0244836f9324345659335d95b31665bd03cf393fb13056b4e60c",
+      "block": 501,
       "status": 1
     },
     {
@@ -634,8 +634,8 @@
       "address": "0xBcd4042DE499D14e55001CcbB24a551F3b954096",
       "exchange": 1,
       "kind": "remove",
-      "hash": "0x6d610302e591dfbbdfafda9da500822e57b14c4ced085d2d595d5dbbdbc0fc1d",
-      "block": 191,
+      "hash": "0x6e84e52c753fabf0c58cc74f3313c9c5a2701c59ed87a218cb8077a3dfb49ca2",
+      "block": 502,
       "status": 1
     },
     {
@@ -644,8 +644,8 @@
       "address": "0x71bE63f3384f5fb98995898A86B02Fb2426c5788",
       "exchange": 1,
       "kind": "remove",
-      "hash": "0xf7cb777331d3e4aad0bdeabad685249e0213377607c10450c7d28791fea1ab39",
-      "block": 192,
+      "hash": "0x7559a0fac8ebb533bcb4049d4fffae457c78aff065fb2a1cc49a3a54c99997ce",
+      "block": 503,
       "status": 1
     },
     {
@@ -654,8 +654,8 @@
       "address": "0xFABB0ac9d68B0B445fB7357272Ff202C5651694a",
       "exchange": 0,
       "kind": "remove",
-      "hash": "0x8689b4801c9c678f6fcc654b787763e03ef84643a1242826ef529bfec6946fca",
-      "block": 193,
+      "hash": "0x8390f01853fdf5e0e0affb6b6e15e98472916c82e7095381b26d552c85b14941",
+      "block": 504,
       "status": 1
     },
     {
@@ -664,8 +664,8 @@
       "address": "0x1CBd3b2770909D4e10f157cABC84C7264073C9Ec",
       "exchange": 1,
       "kind": "remove",
-      "hash": "0xdde3d3559e53b60249baeb5120b225ac054b5d417924ec8a89afc19dff1c1557",
-      "block": 194,
+      "hash": "0x24026b5ecc92871ea422797a2c20a4aa1075929763da1e4c1a72ff0d5a727e0b",
+      "block": 505,
       "status": 1
     },
     {
@@ -674,8 +674,8 @@
       "address": "0xdF3e18d64BC6A983f673Ab319CCaE4f1a57C7097",
       "exchange": 1,
       "kind": "remove",
-      "hash": "0x8531a2aeb5eca136eb481ee1352bbf4c2dfb2e52fb95f8b64afb2079ff76a241",
-      "block": 195,
+      "hash": "0x999357df7c84951e6062ff30334aa3d7573ffcb05a451713e1b99fdf83179549",
+      "block": 506,
       "status": 1
     },
     {
@@ -684,8 +684,8 @@
       "address": "0xcd3B766CCDd6AE721141F452C550Ca635964ce71",
       "exchange": 0,
       "kind": "remove",
-      "hash": "0x734b936ae21f561ab529d3910e5da1b5c4f039709cc10a5cea6ed7e6b9f44086",
-      "block": 196,
+      "hash": "0xdee7deb914204615b05bcf87016124e21e930fe4acbc8397841f4c8f9d9549d6",
+      "block": 507,
       "status": 1
     },
     {
@@ -694,8 +694,8 @@
       "address": "0x2546BcD3c84621e976D8185a91A922aE77ECEc30",
       "exchange": 0,
       "kind": "remove",
-      "hash": "0x8ed8229f7691c47c950c250a19b402205537d87577dc1e3d9904c832adc58126",
-      "block": 197,
+      "hash": "0x5c919a40c2db9d9ba36ce38c24b5760dc999a2240d5653e2180829ed3681b99f",
+      "block": 508,
       "status": 1
     },
     {
@@ -704,8 +704,8 @@
       "address": "0xbDA5747bFD65F08deb54cb465eB87D40e51B197E",
       "exchange": 1,
       "kind": "remove",
-      "hash": "0x511cd5fd5aa5306f78ce7d45a60492d135761addc6b18b5c06318fe753c1d7ec",
-      "block": 198,
+      "hash": "0x056e5c673589de09e9d8470a0982e8349a8b74f3f1f22bbe79d0b5046bb70bf3",
+      "block": 509,
       "status": 1
     },
     {
@@ -714,8 +714,8 @@
       "address": "0xdD2FD4581271e230360230F9337D5c0430Bf44C0",
       "exchange": 1,
       "kind": "remove",
-      "hash": "0x951fa20e9d5353b4d547997348a2013c52643979fcff0f80797f5f1d55b78747",
-      "block": 199,
+      "hash": "0x516b5e32b74ed3f3deade90d06aac55c0e8229ec23a2b9d71e05e947353c38f2",
+      "block": 510,
       "status": 1
     },
     {
@@ -724,8 +724,8 @@
       "address": "0x8626f6940E2eb28930eFb4CeF49B2d1F2C9C1199",
       "exchange": 0,
       "kind": "remove",
-      "hash": "0xb26b3c0efffcd5e05388d1b30707c3a3819e36bf055b6f37507e45712a18c811",
-      "block": 200,
+      "hash": "0x5b1949168526cbee30bfccbed45ef9f2e0a2f8168735d8849ea62fb64e209d51",
+      "block": 511,
       "status": 1
     },
     {
@@ -734,8 +734,8 @@
       "address": "0x09DB0a93B389bEF724429898f539AEB7ac2Dd55f",
       "exchange": 1,
       "kind": "remove",
-      "hash": "0xbf171637a33f7d1766212b8baa4668e52fbb03dfee0547afcda152c61d364257",
-      "block": 201,
+      "hash": "0xf8b1dc3d19b02fea3a15e6eaaaa36f23d6f1ceaaf4328fba7a6c54e6f0da3efa",
+      "block": 512,
       "status": 1
     },
     {
@@ -744,8 +744,8 @@
       "address": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
       "exchange": 1,
       "kind": "swap",
-      "hash": "0xbf7ae84fa6c13da0cd07282483cd30a9a4f690cf00c79ec22886ae56a553801d",
-      "block": 202,
+      "hash": "0x5438af8ba5d3f5d44ce2fcd321ffc0bfe40c5f7812c46552e5208ae865d45500",
+      "block": 513,
       "status": 1
     },
     {
@@ -754,8 +754,8 @@
       "address": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
       "exchange": 1,
       "kind": "swap",
-      "hash": "0x3da7c86cb209db4619b252716cba1a008f441cc688ed5100f068e6e9a7b3d998",
-      "block": 203,
+      "hash": "0xed9c41f087e045f52d623d5c3604cf03f1c8bfede7dee2cb903e500f4875e570",
+      "block": 514,
       "status": 1
     },
     {
@@ -764,8 +764,8 @@
       "address": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
       "exchange": 1,
       "kind": "swap",
-      "hash": "0xf3fe250efa07d870c9ede2e531f92e01ded9315c9f442c22863b579323b30218",
-      "block": 204,
+      "hash": "0x49a389683200cbd8a11f73d25358efab9dcf979025fe7bf88a7e41cac08ff2e1",
+      "block": 515,
       "status": 1
     },
     {
@@ -774,8 +774,8 @@
       "address": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
       "exchange": 0,
       "kind": "swap",
-      "hash": "0xfcccd6e864615fcddae7db36000a3173924da7ffcef46d6ebd97246f2391a2e5",
-      "block": 205,
+      "hash": "0x16d12881fa79798a016fbd9b1259ce8e0d808b8edd0afe6c34cb09d32017868c",
+      "block": 516,
       "status": 1
     },
     {
@@ -784,8 +784,8 @@
       "address": "0x9965507D1a55bcC2695C58ba16FB37d819B0A4dc",
       "exchange": 0,
       "kind": "swap",
-      "hash": "0xf585f2bef8851019c6e4f81b9304d5ba9887904cb78255d035b4d0ee29d81f19",
-      "block": 206,
+      "hash": "0x29ee64e44ffec629039e3bb96f98c2d94d7205e5c033dfe31b97470212f78b65",
+      "block": 517,
       "status": 1
     },
     {
@@ -794,8 +794,8 @@
       "address": "0x976EA74026E726554dB657fA54763abd0C3a0aa9",
       "exchange": 1,
       "kind": "swap",
-      "hash": "0xcfad7912fe754070577502530daa44777abd76b3b155e22da471b657bb609cb8",
-      "block": 207,
+      "hash": "0xdd72002ad5cb5b056ceb2234c76cc4ba7596f9cd9c6307412674834de8fd5610",
+      "block": 518,
       "status": 1
     },
     {
@@ -804,8 +804,8 @@
       "address": "0x14dC79964da2C08b23698B3D3cc7Ca32193d9955",
       "exchange": 0,
       "kind": "swap",
-      "hash": "0x90133f7324ca651871787df9ca67f467527acfb52180b67a7a39ca8899ad7d73",
-      "block": 208,
+      "hash": "0xd6364719e306f804c8a3612e574438a89f934931c389a2081be59cfb7007b111",
+      "block": 519,
       "status": 1
     },
     {
@@ -814,8 +814,8 @@
       "address": "0x23618e81E3f5cdF7f54C3d65f7FBc0aBf5B21E8f",
       "exchange": 0,
       "kind": "swap",
-      "hash": "0xbc487f3cf3850af77e6786d7feeb4e2eeb6a1be29d9a7274eefe7982b81bc0cd",
-      "block": 209,
+      "hash": "0x16551f4a580ab7d5d521d3fc1f652b7287da447d42dd93649664b21fd0dcab8e",
+      "block": 520,
       "status": 1
     },
     {
@@ -824,8 +824,8 @@
       "address": "0xa0Ee7A142d267C1f36714E4a8F75612F20a79720",
       "exchange": 1,
       "kind": "swap",
-      "hash": "0x1633402e1462cbdbd659ef9c0573ef3ccd9f7a19ed216ad9e1b27ae23da19cfa",
-      "block": 210,
+      "hash": "0x31a89ef245df23d4f4d0aa96a2dbccaa27413b74e90a335453a898919d6f4843",
+      "block": 521,
       "status": 1
     },
     {
@@ -834,8 +834,8 @@
       "address": "0xBcd4042DE499D14e55001CcbB24a551F3b954096",
       "exchange": 1,
       "kind": "swap",
-      "hash": "0x9333109d179b66efc4302d336223aec4ec287f7e31b6a1b6ef6ca1dc9892e7cd",
-      "block": 211,
+      "hash": "0xaf4f4bb1ed9da673d545b0adb009174377ef52792d556301f1390553cc2e6d1e",
+      "block": 522,
       "status": 1
     },
     {
@@ -844,8 +844,8 @@
       "address": "0x71bE63f3384f5fb98995898A86B02Fb2426c5788",
       "exchange": 1,
       "kind": "swap",
-      "hash": "0x12a8f6bcad6ac074b06c349c95f0b02ccf8df71f5a4e10ec9b0b24264c664c3f",
-      "block": 212,
+      "hash": "0x60665a6dda23eeabecd1c1b5f693a29e4d369dade316097176ba5d3bb7f9b088",
+      "block": 523,
       "status": 1
     },
     {
@@ -854,8 +854,8 @@
       "address": "0xFABB0ac9d68B0B445fB7357272Ff202C5651694a",
       "exchange": 0,
       "kind": "swap",
-      "hash": "0x7ce8f5795156e6082cd1e9df8a1c46012efce2ff92205269c90b24c38dfb2d8c",
-      "block": 213,
+      "hash": "0xae8ebcc68396d0dde34e3ca3765f2b4601e6110e8549847c88b2a8493cf7d578",
+      "block": 524,
       "status": 1
     },
     {
@@ -864,8 +864,8 @@
       "address": "0x1CBd3b2770909D4e10f157cABC84C7264073C9Ec",
       "exchange": 1,
       "kind": "swap",
-      "hash": "0xdad4830c90f3a840e52d3e7e3b0fa80be4310c4e4965aaad3829c264b6c52044",
-      "block": 214,
+      "hash": "0x353a35468a4ecc7fa55cfef141b31d1eb9054ec5c76beddcf87a8e878476735a",
+      "block": 525,
       "status": 1
     },
     {
@@ -874,8 +874,8 @@
       "address": "0xdF3e18d64BC6A983f673Ab319CCaE4f1a57C7097",
       "exchange": 0,
       "kind": "swap",
-      "hash": "0x33e8a4d4cfe4a9ad3ed78012359fdc8d2f368e817313071ba4b24bc090a1550c",
-      "block": 215,
+      "hash": "0x11a5c1ed5edef3e0f2762330dc5d98f4b6caa48a4be334a013a60e77115f1851",
+      "block": 526,
       "status": 1
     },
     {
@@ -884,8 +884,8 @@
       "address": "0xcd3B766CCDd6AE721141F452C550Ca635964ce71",
       "exchange": 0,
       "kind": "swap",
-      "hash": "0xf0aeb4dfbca138b4fd9ef11c2870caa5d5250251577864bd40605e690e7391f8",
-      "block": 216,
+      "hash": "0x5f832983a3d88a399980c34022cff2b66ea4dc8c4312541e8d2cd94d37a3995f",
+      "block": 527,
       "status": 1
     },
     {
@@ -894,8 +894,8 @@
       "address": "0x2546BcD3c84621e976D8185a91A922aE77ECEc30",
       "exchange": 0,
       "kind": "swap",
-      "hash": "0x0c011ba5f0c9ae5f0346ff5659d6b0d56456c02ad5c549afb5921ae9425950bb",
-      "block": 217,
+      "hash": "0x609e09a3fb28ad692261d25bc7c109143b2894cf8db396b3ac7b52bab4c3a619",
+      "block": 528,
       "status": 1
     },
     {
@@ -904,8 +904,8 @@
       "address": "0xbDA5747bFD65F08deb54cb465eB87D40e51B197E",
       "exchange": 1,
       "kind": "swap",
-      "hash": "0x1fc2a432d1c2cb8b634ae8645c10c1b2fdf2d66cbb2f3cbddb4fe6c42b299837",
-      "block": 218,
+      "hash": "0x08bc8737caa711b65a9decb3bf6f5e75a4122d5e1399462e50302c6b91a6025e",
+      "block": 529,
       "status": 1
     },
     {
@@ -914,8 +914,8 @@
       "address": "0xdD2FD4581271e230360230F9337D5c0430Bf44C0",
       "exchange": 1,
       "kind": "swap",
-      "hash": "0x2540f73bff81bf05aabe04f0f8753a7db706417ef2f750758a556c02e5a8f849",
-      "block": 219,
+      "hash": "0x8da1367f816328f7caae1b09085da2b2eec743d0fd7a004e6ab8b4b9a697c0a2",
+      "block": 530,
       "status": 1
     },
     {
@@ -924,8 +924,8 @@
       "address": "0x8626f6940E2eb28930eFb4CeF49B2d1F2C9C1199",
       "exchange": 1,
       "kind": "swap",
-      "hash": "0x6db1f99b1679cc6273ee0aa95daceaeffd9248c7d96ab8a07a560459d4229f9c",
-      "block": 220,
+      "hash": "0xd5447822c73c9210c8fa0278b05d339160af40ff16129f6990e05082b6dd361b",
+      "block": 531,
       "status": 1
     },
     {
@@ -934,8 +934,8 @@
       "address": "0x09DB0a93B389bEF724429898f539AEB7ac2Dd55f",
       "exchange": 1,
       "kind": "swap",
-      "hash": "0xb6f9c61c4983f3b05392a800422b33b9b3efd7fb85d389dd07630675f1c273ec",
-      "block": 221,
+      "hash": "0xf92ec12f1e1219c30cd5269b55cb9008805ed2e5b13783c09acd757760aa9d11",
+      "block": 532,
       "status": 1
     }
   ]

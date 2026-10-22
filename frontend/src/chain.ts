@@ -4,12 +4,13 @@ import {
   BrowserProvider,
   parseEther,
   formatEther,
-  MaxUint256,
   Signer,
 } from "ethers";
 import config from "./generated/deployment.json";
 export { config, parseEther, formatEther };
-export const rpc = new JsonRpcProvider(config.rpcUrl);
+export const rpc = new JsonRpcProvider(config.rpcUrl, undefined, {
+  cacheTimeout: -1,
+});
 rpc.pollingInterval = 100;
 export const tokenABI = [
   "function symbol() view returns(string)",
@@ -24,7 +25,7 @@ export const dex = (address: string, s?: Signer) =>
 export const token = (address: string, s?: Signer) =>
   new Contract(address, tokenABI, s || rpc);
 export const short = (s: string) =>
-  s ? `${s.slice(0, 6)}…${s.slice(-4)}` : "—";
+  s ? `${s.slice(0, 6)}…${s.slice(-4)}` : "暂无";
 export const fmt = (n: bigint | string | number, d = 4) =>
   Number(typeof n === "bigint" ? formatEther(n) : n).toLocaleString("en-US", {
     maximumFractionDigits: d,
@@ -41,6 +42,23 @@ export async function approve(
   const t = token(address, s);
   if ((await t.allowance(await s.getAddress(), spender)) < amount)
     await (await t.approve(spender, amount)).wait();
+}
+export async function ensureBalance(
+  address: string,
+  amount: bigint,
+  signer: Signer,
+) {
+  if ((await token(address).balanceOf(await signer.getAddress())) < amount)
+    throw Error("代币余额不足，请领取测试币或减少输入数量。");
+}
+export async function depositETH(amount: bigint, signer: Signer) {
+  if ((await rpc.getBalance(await signer.getAddress())) < amount)
+    throw Error("账户以太币余额不足，请减少包装数量。");
+  return new Contract(
+    config.tokens[2].address,
+    config.abis.WrappedETH,
+    signer,
+  ).deposit({ value: amount });
 }
 export type Pool = {
   key: string;
@@ -122,7 +140,7 @@ export async function positions() {
             valueB: v[1],
           });
         } catch {
-          /* Burned NFT has no owner. */
+          /* 已销毁的凭证没有持有人。 */
         }
       }),
     );
@@ -196,13 +214,15 @@ export async function revertReceipt(error: unknown) {
 }
 export async function wallet() {
   const eth = (window as unknown as { ethereum?: object }).ethereum;
-  if (!eth) throw Error("未检测到钱包扩展；可以使用本地演示账户。");
+  if (!eth) throw Error("未检测到钱包扩展，可以使用本地演示账户。");
   const p = new BrowserProvider(
     eth as ConstructorParameters<typeof BrowserProvider>[0],
   );
   await p.send("eth_requestAccounts", []);
   if ((await p.getNetwork()).chainId !== 31337n)
-    throw Error("请将钱包切换到本地网络 31337，RPC 为 http://127.0.0.1:8545");
+    throw Error(
+      "请将钱包切换到本地网络 31337，节点地址为 http://127.0.0.1:8545。",
+    );
   return p.getSigner();
 }
 export async function simulate(progress: (s: string) => void) {

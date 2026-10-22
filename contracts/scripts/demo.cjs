@@ -92,7 +92,7 @@ async function main() {
     const afterFailure = await Promise.all(dex.map(snapshot));
     failure = {
       expectedRevert: true,
-      reason: "Swap slippage: output below principal plus minimum profit",
+      reason: "兑换输出不足以覆盖本金和最低利润",
       receiptHash: receipt.hash,
       block: receipt.blockNumber,
       status: receipt.status,

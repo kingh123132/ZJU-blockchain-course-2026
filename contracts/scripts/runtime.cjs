@@ -22,13 +22,6 @@ async function save(name, data) {
       2,
     ),
   );
-  fs.mkdirSync(path.join(__dirname, "../../frontend/public/results"), {
-    recursive: true,
-  });
-  fs.copyFileSync(
-    path.join(__dirname, "../../docs/results", name),
-    path.join(__dirname, "../../frontend/public/results", name),
-  );
 }
 async function snapshot(dex) {
   const p = await dex.pools(1);

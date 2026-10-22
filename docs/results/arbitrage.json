@@ -1,17 +1,50 @@
 {
   "success": {
     "address": "0x02484cb50AAC86Eae85610D6f4Bf026f30f6627D",
-    "hash": "0xe9e6ed66ff8d97cca9cd2d6c5a73277377e484476e66c1ea918ee9d66d849fd6",
-    "block": 228,
+    "hash": "0xe5792090175fa19cbbf07070952b2d58aaedf47e6b5f5860faf00617991c3511",
+    "block": 535,
     "status": 1,
     "inputCTB": "100.0",
-    "intermediateCTA": "97.359100759331342985",
-    "outputCTB": "125.682007128196016887",
-    "profitCTB": "25.682007128196016887",
+    "intermediateCTA": "99.308967012403599107",
+    "outputCTB": "130.654706490773264054",
+    "profitCTB": "30.654706490773264054",
     "buy": 0,
     "sell": 1,
-    "balanceBeforeCTB": "200030.654706490773264054",
-    "balanceAfterCTB": "200056.336713618969280941",
+    "balanceBeforeCTB": "100000.0",
+    "balanceAfterCTB": "100030.654706490773264054",
+    "before": [
+      {
+        "reserveCTA": "10031.455131149781055634",
+        "reserveCTB": "9971.254382706619941543",
+        "priceCTBperCTA": 0.99399880200269
+      },
+      {
+        "reserveCTA": "10252.194209366457405853",
+        "reserveCTB": "13659.423051965476747274",
+        "priceCTBperCTA": 1.3323414259443271
+      }
+    ],
+    "after": [
+      {
+        "reserveCTA": "9932.146164137377456527",
+        "reserveCTB": "10071.254382706619941543",
+        "priceCTBperCTA": 1.0140058569689128
+      },
+      {
+        "reserveCTA": "10351.50317637886100496",
+        "reserveCTB": "13528.76834547470348322",
+        "priceCTBperCTA": 1.3069375640386276
+      }
+    ],
+    "gasUsed": "219579"
+  },
+  "failure": {
+    "expectedRevert": true,
+    "reason": "兑换输出不足以覆盖本金和最低利润",
+    "receiptHash": "0x8d871d5c34e6c7f73bf09391d0cbf732b8754b839a1d2fd35197d55b721a2ef4",
+    "block": 536,
+    "status": 0,
+    "gasUsed": "214383",
     "before": [
       {
         "reserveCTA": "9932.146164137377456527",
@@ -26,47 +59,14 @@
     ],
     "after": [
       {
-        "reserveCTA": "9834.787063378046113542",
-        "reserveCTB": "10171.254382706619941543",
-        "priceCTBperCTA": 1.0342119577333284
+        "reserveCTA": "9932.146164137377456527",
+        "reserveCTB": "10071.254382706619941543",
+        "priceCTBperCTA": 1.0140058569689128
       },
       {
-        "reserveCTA": "10448.862277138192347945",
-        "reserveCTB": "13403.086338346507466333",
-        "priceCTBperCTA": 1.2827316489444092
-      }
-    ],
-    "gasUsed": "219624"
-  },
-  "failure": {
-    "expectedRevert": true,
-    "reason": "Swap slippage: output below principal plus minimum profit",
-    "receiptHash": "0x968ac91a2c26c762491352be9a736665d848a5d7ccb7ab1e3efc1b0d43043868",
-    "block": 229,
-    "status": 0,
-    "gasUsed": "214328",
-    "before": [
-      {
-        "reserveCTA": "9834.787063378046113542",
-        "reserveCTB": "10171.254382706619941543",
-        "priceCTBperCTA": 1.0342119577333284
-      },
-      {
-        "reserveCTA": "10448.862277138192347945",
-        "reserveCTB": "13403.086338346507466333",
-        "priceCTBperCTA": 1.2827316489444092
-      }
-    ],
-    "after": [
-      {
-        "reserveCTA": "9834.787063378046113542",
-        "reserveCTB": "10171.254382706619941543",
-        "priceCTBperCTA": 1.0342119577333284
-      },
-      {
-        "reserveCTA": "10448.862277138192347945",
-        "reserveCTB": "13403.086338346507466333",
-        "priceCTBperCTA": 1.2827316489444092
+        "reserveCTA": "10351.50317637886100496",
+        "reserveCTB": "13528.76834547470348322",
+        "priceCTBperCTA": 1.3069375640386276
       }
     ],
     "poolsUnchanged": true,
