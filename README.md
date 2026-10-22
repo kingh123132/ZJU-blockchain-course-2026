@@ -4,15 +4,17 @@
 
 本项目在课程提供的 React / Hardhat 框架上完成，保留了上游仓库的提交历史。实现了两套独立的恒定乘积交易所、ERC20 测试币、ERC721 流动性凭证，以及在一笔交易中完成两次兑换的套利合约。
 
-公开仓库：[kingh123132/ZJU-blockchain-course-2026](https://github.com/kingh123132/ZJU-blockchain-course-2026)。上游：[LBruyne/ZJU-blockchain-course-2026](https://github.com/LBruyne/ZJU-blockchain-course-2026)。
+公开项目仓库：[kingh123132/tidal-dex-amm-arbitrage](https://github.com/kingh123132/tidal-dex-amm-arbitrage)。
+
+课程要求的 fork 仓库：[kingh123132/ZJU-blockchain-course-2026](https://github.com/kingh123132/ZJU-blockchain-course-2026)，保留与[课程上游仓库](https://github.com/LBruyne/ZJU-blockchain-course-2026)的 fork 关系和提交历史。两份仓库均包含完整代码、文档、截图及实验记录；按课程要求提交时使用 fork 仓库链接。
 
 ## 运行环境与启动
 
 使用 Node.js 22 和 npm 10，测试环境为 Windows 11。合约使用 Solidity 0.8.28、Hardhat 2.26.3 和 OpenZeppelin 5.4.0；前端使用 React 19、TypeScript、Vite 和 ethers v6。编译器已作为 npm 依赖锁定，不需要另外安装 Solidity 或 Ganache。
 
 ```sh
-git clone https://github.com/kingh123132/ZJU-blockchain-course-2026.git
-cd ZJU-blockchain-course-2026
+git clone https://github.com/kingh123132/tidal-dex-amm-arbitrage.git
+cd tidal-dex-amm-arbitrage
 npm run setup
 npm run dev
 ```
@@ -199,7 +201,7 @@ NFT 销毁和撤回：
 
 演示录制了从打开项目、领取测试资产，到创建池、添加流动性、兑换、销毁 NFT、套利、失败回滚和多用户模拟的操作过程。
 
-视频和压缩提交包放在 [作业二发布页](https://github.com/kingh123132/ZJU-blockchain-course-2026/releases/tag/assignment-2)。文件名为 `3230105308_杨金潼_作业2.mp4`，压缩包只包含视频、仓库链接和简短说明。
+视频和压缩提交包放在 [作业二发布页](https://github.com/kingh123132/tidal-dex-amm-arbitrage/releases/tag/assignment-2)。文件名为 `3230105308_杨金潼_作业2.mp4`，压缩包只包含视频、仓库链接和简短说明。GitHub 可能会简化下载文件名，解压后的视频保留完整的学号、姓名和作业编号。
 
 ## 目录
 
