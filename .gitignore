@@ -1,0 +1,9 @@
+node_modules/
+artifacts/
+cache/
+coverage/
+frontend/build/
+.work/
+*.log
+.env
+submission/

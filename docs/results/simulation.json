@@ -1,0 +1,942 @@
+{
+  "seed": 2026,
+  "users": [
+    {
+      "index": 1,
+      "address": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+      "eth": "9999.999655231545823456"
+    },
+    {
+      "index": 2,
+      "address": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+      "eth": "9999.999663078400826984"
+    },
+    {
+      "index": 3,
+      "address": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+      "eth": "9999.999666611131655286"
+    },
+    {
+      "index": 4,
+      "address": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+      "eth": "9999.99966820160147382"
+    },
+    {
+      "index": 5,
+      "address": "0x9965507D1a55bcC2695C58ba16FB37d819B0A4dc",
+      "eth": "9999.999668917646898998"
+    },
+    {
+      "index": 6,
+      "address": "0x976EA74026E726554dB657fA54763abd0C3a0aa9",
+      "eth": "9999.999669240017534436"
+    },
+    {
+      "index": 7,
+      "address": "0x14dC79964da2C08b23698B3D3cc7Ca32193d9955",
+      "eth": "9999.999669385151810836"
+    },
+    {
+      "index": 8,
+      "address": "0x23618e81E3f5cdF7f54C3d65f7FBc0aBf5B21E8f",
+      "eth": "9999.99966945049273264"
+    },
+    {
+      "index": 9,
+      "address": "0xa0Ee7A142d267C1f36714E4a8F75612F20a79720",
+      "eth": "9999.999669479909738878"
+    },
+    {
+      "index": 10,
+      "address": "0xBcd4042DE499D14e55001CcbB24a551F3b954096",
+      "eth": "9999.999669493153597778"
+    },
+    {
+      "index": 11,
+      "address": "0x71bE63f3384f5fb98995898A86B02Fb2426c5788",
+      "eth": "9999.999669499116030498"
+    },
+    {
+      "index": 12,
+      "address": "0xFABB0ac9d68B0B445fB7357272Ff202C5651694a",
+      "eth": "9999.999669501800373182"
+    },
+    {
+      "index": 13,
+      "address": "0x1CBd3b2770909D4e10f157cABC84C7264073C9Ec",
+      "eth": "9999.99966950300903961"
+    },
+    {
+      "index": 14,
+      "address": "0xdF3e18d64BC6A983f673Ab319CCaE4f1a57C7097",
+      "eth": "9999.99966950355323861"
+    },
+    {
+      "index": 15,
+      "address": "0xcd3B766CCDd6AE721141F452C550Ca635964ce71",
+      "eth": "9999.99966950379801249"
+    },
+    {
+      "index": 16,
+      "address": "0x2546BcD3c84621e976D8185a91A922aE77ECEc30",
+      "eth": "9999.999669503908246986"
+    },
+    {
+      "index": 17,
+      "address": "0xbDA5747bFD65F08deb54cb465eB87D40e51B197E",
+      "eth": "9999.999669503957934148"
+    },
+    {
+      "index": 18,
+      "address": "0xdD2FD4581271e230360230F9337D5c0430Bf44C0",
+      "eth": "9999.99966950398017671"
+    },
+    {
+      "index": 19,
+      "address": "0x8626f6940E2eb28930eFb4CeF49B2d1F2C9C1199",
+      "eth": "9999.999669503990184204"
+    },
+    {
+      "index": 20,
+      "address": "0x09DB0a93B389bEF724429898f539AEB7ac2Dd55f",
+      "eth": "9999.999669503994632714"
+    }
+  ],
+  "rounds": 4,
+  "startBlock": 21,
+  "endBlock": 221,
+  "durationSeconds": 41.726,
+  "counts": {
+    "users": 20,
+    "swap": 40,
+    "add": 20,
+    "remove": 20,
+    "failed": 0
+  },
+  "before": [
+    {
+      "reserveCTA": "10000.0",
+      "reserveCTB": "10000.0",
+      "priceCTBperCTA": 1
+    },
+    {
+      "reserveCTA": "10000.0",
+      "reserveCTB": "14000.0",
+      "priceCTBperCTA": 1.4
+    }
+  ],
+  "after": [
+    {
+      "reserveCTA": "10031.455131149781055634",
+      "reserveCTB": "9971.254382706619941543",
+      "priceCTBperCTA": 0.99399880200269
+    },
+    {
+      "reserveCTA": "10252.194209366457405853",
+      "reserveCTB": "13659.423051965476747274",
+      "priceCTBperCTA": 1.3323414259443271
+    }
+  ],
+  "operations": [
+    {
+      "round": 0,
+      "user": 1,
+      "address": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+      "exchange": 0,
+      "kind": "swap",
+      "hash": "0x0e0c87d06aa954f168675a833d9df47af1a844252b940877572b7991731c4bcb",
+      "block": 142,
+      "status": 1
+    },
+    {
+      "round": 0,
+      "user": 2,
+      "address": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+      "exchange": 1,
+      "kind": "swap",
+      "hash": "0x6ac3c2e45e195e29d9fc288b1b6a620dfc403d4e99cdd01d8511d8792a57501e",
+      "block": 143,
+      "status": 1
+    },
+    {
+      "round": 0,
+      "user": 3,
+      "address": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+      "exchange": 1,
+      "kind": "swap",
+      "hash": "0x83f458735cfbdb436bcd93c2b329c681515c6abe4f5826ee394e0795052ec6ba",
+      "block": 144,
+      "status": 1
+    },
+    {
+      "round": 0,
+      "user": 4,
+      "address": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+      "exchange": 1,
+      "kind": "swap",
+      "hash": "0x991c99a90796b83cdfeab6eb02cc67d28deea4b6542cbd16a27059d585194c1f",
+      "block": 145,
+      "status": 1
+    },
+    {
+      "round": 0,
+      "user": 5,
+      "address": "0x9965507D1a55bcC2695C58ba16FB37d819B0A4dc",
+      "exchange": 1,
+      "kind": "swap",
+      "hash": "0x11b5b9357e6e05e9960bc2f6cc818cc570d5816707138c283d8f41a775d04278",
+      "block": 146,
+      "status": 1
+    },
+    {
+      "round": 0,
+      "user": 6,
+      "address": "0x976EA74026E726554dB657fA54763abd0C3a0aa9",
+      "exchange": 1,
+      "kind": "swap",
+      "hash": "0x70f0eb5308d621e565eb32060f7fc6b8e9f291ec96963165a6bb0b7982ed2904",
+      "block": 147,
+      "status": 1
+    },
+    {
+      "round": 0,
+      "user": 7,
+      "address": "0x14dC79964da2C08b23698B3D3cc7Ca32193d9955",
+      "exchange": 0,
+      "kind": "swap",
+      "hash": "0xf02b4bb1f806825f05dad5ccb5eaf8ca4ecb1301dba38aceaec77b927999c82b",
+      "block": 148,
+      "status": 1
+    },
+    {
+      "round": 0,
+      "user": 8,
+      "address": "0x23618e81E3f5cdF7f54C3d65f7FBc0aBf5B21E8f",
+      "exchange": 1,
+      "kind": "swap",
+      "hash": "0x9d83d2b5c1a2776b36597ee99de55e855f3d6e1a68438d08cfd4d178f5da661b",
+      "block": 149,
+      "status": 1
+    },
+    {
+      "round": 0,
+      "user": 9,
+      "address": "0xa0Ee7A142d267C1f36714E4a8F75612F20a79720",
+      "exchange": 1,
+      "kind": "swap",
+      "hash": "0x3e6c32669ed63cf19b23ba7a9880a4499304cbe79aaa13fc8dd967940d643bd6",
+      "block": 150,
+      "status": 1
+    },
+    {
+      "round": 0,
+      "user": 10,
+      "address": "0xBcd4042DE499D14e55001CcbB24a551F3b954096",
+      "exchange": 1,
+      "kind": "swap",
+      "hash": "0x6d3a0720b83b61770b59b6a2ec78641db2008c3e7b82b456b4754c076b36d90d",
+      "block": 151,
+      "status": 1
+    },
+    {
+      "round": 0,
+      "user": 11,
+      "address": "0x71bE63f3384f5fb98995898A86B02Fb2426c5788",
+      "exchange": 1,
+      "kind": "swap",
+      "hash": "0x651c5516a9e5af6e2fecee088da4c5f81cd8361b5570ce77c30c2242f8044b18",
+      "block": 152,
+      "status": 1
+    },
+    {
+      "round": 0,
+      "user": 12,
+      "address": "0xFABB0ac9d68B0B445fB7357272Ff202C5651694a",
+      "exchange": 1,
+      "kind": "swap",
+      "hash": "0xb8c580da64cae325cadfac97964b047686589d0cca5f8e28a15318234fbeb0d1",
+      "block": 153,
+      "status": 1
+    },
+    {
+      "round": 0,
+      "user": 13,
+      "address": "0x1CBd3b2770909D4e10f157cABC84C7264073C9Ec",
+      "exchange": 0,
+      "kind": "swap",
+      "hash": "0xfdc616b9f148cdd07b892770a0d9e1fbe3c88b03ed5f6a8cd989141b275db5fd",
+      "block": 154,
+      "status": 1
+    },
+    {
+      "round": 0,
+      "user": 14,
+      "address": "0xdF3e18d64BC6A983f673Ab319CCaE4f1a57C7097",
+      "exchange": 0,
+      "kind": "swap",
+      "hash": "0xf8be4a5b87b4607d35b670c6b154d789a9018c52f41ebcf44616ad0caf499e8e",
+      "block": 155,
+      "status": 1
+    },
+    {
+      "round": 0,
+      "user": 15,
+      "address": "0xcd3B766CCDd6AE721141F452C550Ca635964ce71",
+      "exchange": 0,
+      "kind": "swap",
+      "hash": "0x970a103e6f896fd386715b2a836634fa615952c877a507b7355f61e10fa3abd4",
+      "block": 156,
+      "status": 1
+    },
+    {
+      "round": 0,
+      "user": 16,
+      "address": "0x2546BcD3c84621e976D8185a91A922aE77ECEc30",
+      "exchange": 0,
+      "kind": "swap",
+      "hash": "0x87ce34014d94b87920abea2d8bd6c0b811293f63f577eeea076dce9e46b56cae",
+      "block": 157,
+      "status": 1
+    },
+    {
+      "round": 0,
+      "user": 17,
+      "address": "0xbDA5747bFD65F08deb54cb465eB87D40e51B197E",
+      "exchange": 1,
+      "kind": "swap",
+      "hash": "0x018d77b11926da35aabbb65716367406e1a5425e5341a2f3bb3b3e30521ba655",
+      "block": 158,
+      "status": 1
+    },
+    {
+      "round": 0,
+      "user": 18,
+      "address": "0xdD2FD4581271e230360230F9337D5c0430Bf44C0",
+      "exchange": 0,
+      "kind": "swap",
+      "hash": "0xd5681a337e463f3e3517e246f04855e29ede99238ce24704d07a1ca62f3d6fef",
+      "block": 159,
+      "status": 1
+    },
+    {
+      "round": 0,
+      "user": 19,
+      "address": "0x8626f6940E2eb28930eFb4CeF49B2d1F2C9C1199",
+      "exchange": 0,
+      "kind": "swap",
+      "hash": "0x3666b62960803c6b77dfa14fc36136a50a8ec83ae51b561ed8df43d3ee9c61a5",
+      "block": 160,
+      "status": 1
+    },
+    {
+      "round": 0,
+      "user": 20,
+      "address": "0x09DB0a93B389bEF724429898f539AEB7ac2Dd55f",
+      "exchange": 0,
+      "kind": "swap",
+      "hash": "0xb7f6a244d865744bb922557ad8dc3e0466ee2a6c8b5ba63f8078111941ac7746",
+      "block": 161,
+      "status": 1
+    },
+    {
+      "round": 1,
+      "user": 1,
+      "address": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+      "exchange": 1,
+      "kind": "add",
+      "hash": "0xb391bab5e63e7088b152701a4c2530d231c1447386792ee1bc065ceb8c8c213e",
+      "block": 162,
+      "status": 1
+    },
+    {
+      "round": 1,
+      "user": 2,
+      "address": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+      "exchange": 0,
+      "kind": "add",
+      "hash": "0x3b07a8a5843388bf300575337f1d7bfa3dd51c72ea952104746dffa7be7e94a7",
+      "block": 163,
+      "status": 1
+    },
+    {
+      "round": 1,
+      "user": 3,
+      "address": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+      "exchange": 0,
+      "kind": "add",
+      "hash": "0x9f3791389b457fe120e19e57d336cff6f6f8645ec535ab34cf676ed6746f3514",
+      "block": 164,
+      "status": 1
+    },
+    {
+      "round": 1,
+      "user": 4,
+      "address": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+      "exchange": 1,
+      "kind": "add",
+      "hash": "0x2a890c14fde0dc0c31f0afed816558d5148047ea30dd826a96de89cb9267b905",
+      "block": 165,
+      "status": 1
+    },
+    {
+      "round": 1,
+      "user": 5,
+      "address": "0x9965507D1a55bcC2695C58ba16FB37d819B0A4dc",
+      "exchange": 0,
+      "kind": "add",
+      "hash": "0x72ffbfa1aa0c2c3c1751b02ed4d8710aeac5e49b2f5e6937ce9bc6230704a643",
+      "block": 166,
+      "status": 1
+    },
+    {
+      "round": 1,
+      "user": 6,
+      "address": "0x976EA74026E726554dB657fA54763abd0C3a0aa9",
+      "exchange": 1,
+      "kind": "add",
+      "hash": "0x8b0f90bbfb0dd98f15ae35a98b24ed0b8cf1bb32581700e7e6636830d791556d",
+      "block": 167,
+      "status": 1
+    },
+    {
+      "round": 1,
+      "user": 7,
+      "address": "0x14dC79964da2C08b23698B3D3cc7Ca32193d9955",
+      "exchange": 0,
+      "kind": "add",
+      "hash": "0xff4935c2aff53b499fd3d97e823d01b0e42d5d496b1fe98db9057f2d4a22e767",
+      "block": 168,
+      "status": 1
+    },
+    {
+      "round": 1,
+      "user": 8,
+      "address": "0x23618e81E3f5cdF7f54C3d65f7FBc0aBf5B21E8f",
+      "exchange": 1,
+      "kind": "add",
+      "hash": "0xbdc23786e9959492309c3a8c7b3a6fdc3c1af5bb886b2567a08373b922438268",
+      "block": 169,
+      "status": 1
+    },
+    {
+      "round": 1,
+      "user": 9,
+      "address": "0xa0Ee7A142d267C1f36714E4a8F75612F20a79720",
+      "exchange": 1,
+      "kind": "add",
+      "hash": "0x3e9bc17debe747dae24bfb8fce7cf670f4c575ed9274ffd418eda0f0593238d8",
+      "block": 170,
+      "status": 1
+    },
+    {
+      "round": 1,
+      "user": 10,
+      "address": "0xBcd4042DE499D14e55001CcbB24a551F3b954096",
+      "exchange": 1,
+      "kind": "add",
+      "hash": "0x9b6f26322562a9cb63ac52035be743b08f97cf922b3736c26ce5fc2605bfe517",
+      "block": 171,
+      "status": 1
+    },
+    {
+      "round": 1,
+      "user": 11,
+      "address": "0x71bE63f3384f5fb98995898A86B02Fb2426c5788",
+      "exchange": 1,
+      "kind": "add",
+      "hash": "0xc70829c7a4a3fa1d3f1b26eeaab2eb9eee8fad21c3dbaa377c7014e855c1f8ae",
+      "block": 172,
+      "status": 1
+    },
+    {
+      "round": 1,
+      "user": 12,
+      "address": "0xFABB0ac9d68B0B445fB7357272Ff202C5651694a",
+      "exchange": 0,
+      "kind": "add",
+      "hash": "0x607d50806b83bab78a0e37abca5570707074710d8e7664a5d2c05fbfea15a9bd",
+      "block": 173,
+      "status": 1
+    },
+    {
+      "round": 1,
+      "user": 13,
+      "address": "0x1CBd3b2770909D4e10f157cABC84C7264073C9Ec",
+      "exchange": 1,
+      "kind": "add",
+      "hash": "0xa1008ea8ace65c53f3c145bee60f03e0f8ac05f276875f5b63402ab393d6de60",
+      "block": 174,
+      "status": 1
+    },
+    {
+      "round": 1,
+      "user": 14,
+      "address": "0xdF3e18d64BC6A983f673Ab319CCaE4f1a57C7097",
+      "exchange": 1,
+      "kind": "add",
+      "hash": "0x5e643b01292a9d69ba5f3803bb1a91ee7ab48c87696b27b9341e94dd0a98bb28",
+      "block": 175,
+      "status": 1
+    },
+    {
+      "round": 1,
+      "user": 15,
+      "address": "0xcd3B766CCDd6AE721141F452C550Ca635964ce71",
+      "exchange": 0,
+      "kind": "add",
+      "hash": "0x1191a3ca93ec099ba84cee9e1a8bbcff59fe70f79aa0ba0bd996e527b59188a6",
+      "block": 176,
+      "status": 1
+    },
+    {
+      "round": 1,
+      "user": 16,
+      "address": "0x2546BcD3c84621e976D8185a91A922aE77ECEc30",
+      "exchange": 0,
+      "kind": "add",
+      "hash": "0x694f913a5f22fbb980e66ae482d9d0035ddc00b268e650662f79d290c25d7555",
+      "block": 177,
+      "status": 1
+    },
+    {
+      "round": 1,
+      "user": 17,
+      "address": "0xbDA5747bFD65F08deb54cb465eB87D40e51B197E",
+      "exchange": 1,
+      "kind": "add",
+      "hash": "0x9707b03bb3f7828aaa309d4dbd4e27a5d16393f027e442cbf08598277bca4c8f",
+      "block": 178,
+      "status": 1
+    },
+    {
+      "round": 1,
+      "user": 18,
+      "address": "0xdD2FD4581271e230360230F9337D5c0430Bf44C0",
+      "exchange": 1,
+      "kind": "add",
+      "hash": "0xcc3a294793d3e632849753b56c2e2dddae22236ba9d7e1f69a348c2c55b4c7e0",
+      "block": 179,
+      "status": 1
+    },
+    {
+      "round": 1,
+      "user": 19,
+      "address": "0x8626f6940E2eb28930eFb4CeF49B2d1F2C9C1199",
+      "exchange": 0,
+      "kind": "add",
+      "hash": "0x4bea7364c255ccd460f8b7be44652944eb213f219f90c6e27072d5c885dd4c4b",
+      "block": 180,
+      "status": 1
+    },
+    {
+      "round": 1,
+      "user": 20,
+      "address": "0x09DB0a93B389bEF724429898f539AEB7ac2Dd55f",
+      "exchange": 1,
+      "kind": "add",
+      "hash": "0xf428d5a6e55a42554f5cf9f8de085d172c8aebce7297d9c4ca3d521eb5a66f41",
+      "block": 181,
+      "status": 1
+    },
+    {
+      "round": 2,
+      "user": 1,
+      "address": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+      "exchange": 1,
+      "kind": "remove",
+      "hash": "0x7625151cbf456e3c80eb507c1b91299344844b1203b4e2ebb30904dc2d323492",
+      "block": 182,
+      "status": 1
+    },
+    {
+      "round": 2,
+      "user": 2,
+      "address": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+      "exchange": 0,
+      "kind": "remove",
+      "hash": "0x6a9fb3fb5d696f21f7c33dac9dac08529f1c0cf7c2143da1f9189d87194305e0",
+      "block": 183,
+      "status": 1
+    },
+    {
+      "round": 2,
+      "user": 3,
+      "address": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+      "exchange": 0,
+      "kind": "remove",
+      "hash": "0x12f411e373353c3505d0f0e2d64c402557a42b880511c79d027f7f5fea72dfb3",
+      "block": 184,
+      "status": 1
+    },
+    {
+      "round": 2,
+      "user": 4,
+      "address": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+      "exchange": 1,
+      "kind": "remove",
+      "hash": "0x1cd0e48af9392c59928430ca67b66fe4ba236d53020909231887efaa1c65ce68",
+      "block": 185,
+      "status": 1
+    },
+    {
+      "round": 2,
+      "user": 5,
+      "address": "0x9965507D1a55bcC2695C58ba16FB37d819B0A4dc",
+      "exchange": 0,
+      "kind": "remove",
+      "hash": "0xb32197a557907b93ff9ae07d874bb0364ab4ca867f648282866f1ff24c972eeb",
+      "block": 186,
+      "status": 1
+    },
+    {
+      "round": 2,
+      "user": 6,
+      "address": "0x976EA74026E726554dB657fA54763abd0C3a0aa9",
+      "exchange": 1,
+      "kind": "remove",
+      "hash": "0xf9c6e24dbdab4bcd6a54fa9cebe9a92a1cab5f0652953cd5fa116d6315be91a4",
+      "block": 187,
+      "status": 1
+    },
+    {
+      "round": 2,
+      "user": 7,
+      "address": "0x14dC79964da2C08b23698B3D3cc7Ca32193d9955",
+      "exchange": 0,
+      "kind": "remove",
+      "hash": "0xe6b43c0eedf40b832da54706f371fd42711e1d79aa566ff90a7d3af7fb23f7bb",
+      "block": 188,
+      "status": 1
+    },
+    {
+      "round": 2,
+      "user": 8,
+      "address": "0x23618e81E3f5cdF7f54C3d65f7FBc0aBf5B21E8f",
+      "exchange": 1,
+      "kind": "remove",
+      "hash": "0x608e0eb1ecc48c9988ae16ee0efedf28c91b637b050b3f80ae25155d3ecd9b4f",
+      "block": 189,
+      "status": 1
+    },
+    {
+      "round": 2,
+      "user": 9,
+      "address": "0xa0Ee7A142d267C1f36714E4a8F75612F20a79720",
+      "exchange": 1,
+      "kind": "remove",
+      "hash": "0x012c935475d0bfdb8b560d45be0ec097803aca4816dd2cf90a866c2c98eefefb",
+      "block": 190,
+      "status": 1
+    },
+    {
+      "round": 2,
+      "user": 10,
+      "address": "0xBcd4042DE499D14e55001CcbB24a551F3b954096",
+      "exchange": 1,
+      "kind": "remove",
+      "hash": "0x6d610302e591dfbbdfafda9da500822e57b14c4ced085d2d595d5dbbdbc0fc1d",
+      "block": 191,
+      "status": 1
+    },
+    {
+      "round": 2,
+      "user": 11,
+      "address": "0x71bE63f3384f5fb98995898A86B02Fb2426c5788",
+      "exchange": 1,
+      "kind": "remove",
+      "hash": "0xf7cb777331d3e4aad0bdeabad685249e0213377607c10450c7d28791fea1ab39",
+      "block": 192,
+      "status": 1
+    },
+    {
+      "round": 2,
+      "user": 12,
+      "address": "0xFABB0ac9d68B0B445fB7357272Ff202C5651694a",
+      "exchange": 0,
+      "kind": "remove",
+      "hash": "0x8689b4801c9c678f6fcc654b787763e03ef84643a1242826ef529bfec6946fca",
+      "block": 193,
+      "status": 1
+    },
+    {
+      "round": 2,
+      "user": 13,
+      "address": "0x1CBd3b2770909D4e10f157cABC84C7264073C9Ec",
+      "exchange": 1,
+      "kind": "remove",
+      "hash": "0xdde3d3559e53b60249baeb5120b225ac054b5d417924ec8a89afc19dff1c1557",
+      "block": 194,
+      "status": 1
+    },
+    {
+      "round": 2,
+      "user": 14,
+      "address": "0xdF3e18d64BC6A983f673Ab319CCaE4f1a57C7097",
+      "exchange": 1,
+      "kind": "remove",
+      "hash": "0x8531a2aeb5eca136eb481ee1352bbf4c2dfb2e52fb95f8b64afb2079ff76a241",
+      "block": 195,
+      "status": 1
+    },
+    {
+      "round": 2,
+      "user": 15,
+      "address": "0xcd3B766CCDd6AE721141F452C550Ca635964ce71",
+      "exchange": 0,
+      "kind": "remove",
+      "hash": "0x734b936ae21f561ab529d3910e5da1b5c4f039709cc10a5cea6ed7e6b9f44086",
+      "block": 196,
+      "status": 1
+    },
+    {
+      "round": 2,
+      "user": 16,
+      "address": "0x2546BcD3c84621e976D8185a91A922aE77ECEc30",
+      "exchange": 0,
+      "kind": "remove",
+      "hash": "0x8ed8229f7691c47c950c250a19b402205537d87577dc1e3d9904c832adc58126",
+      "block": 197,
+      "status": 1
+    },
+    {
+      "round": 2,
+      "user": 17,
+      "address": "0xbDA5747bFD65F08deb54cb465eB87D40e51B197E",
+      "exchange": 1,
+      "kind": "remove",
+      "hash": "0x511cd5fd5aa5306f78ce7d45a60492d135761addc6b18b5c06318fe753c1d7ec",
+      "block": 198,
+      "status": 1
+    },
+    {
+      "round": 2,
+      "user": 18,
+      "address": "0xdD2FD4581271e230360230F9337D5c0430Bf44C0",
+      "exchange": 1,
+      "kind": "remove",
+      "hash": "0x951fa20e9d5353b4d547997348a2013c52643979fcff0f80797f5f1d55b78747",
+      "block": 199,
+      "status": 1
+    },
+    {
+      "round": 2,
+      "user": 19,
+      "address": "0x8626f6940E2eb28930eFb4CeF49B2d1F2C9C1199",
+      "exchange": 0,
+      "kind": "remove",
+      "hash": "0xb26b3c0efffcd5e05388d1b30707c3a3819e36bf055b6f37507e45712a18c811",
+      "block": 200,
+      "status": 1
+    },
+    {
+      "round": 2,
+      "user": 20,
+      "address": "0x09DB0a93B389bEF724429898f539AEB7ac2Dd55f",
+      "exchange": 1,
+      "kind": "remove",
+      "hash": "0xbf171637a33f7d1766212b8baa4668e52fbb03dfee0547afcda152c61d364257",
+      "block": 201,
+      "status": 1
+    },
+    {
+      "round": 3,
+      "user": 1,
+      "address": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+      "exchange": 1,
+      "kind": "swap",
+      "hash": "0xbf7ae84fa6c13da0cd07282483cd30a9a4f690cf00c79ec22886ae56a553801d",
+      "block": 202,
+      "status": 1
+    },
+    {
+      "round": 3,
+      "user": 2,
+      "address": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+      "exchange": 1,
+      "kind": "swap",
+      "hash": "0x3da7c86cb209db4619b252716cba1a008f441cc688ed5100f068e6e9a7b3d998",
+      "block": 203,
+      "status": 1
+    },
+    {
+      "round": 3,
+      "user": 3,
+      "address": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+      "exchange": 1,
+      "kind": "swap",
+      "hash": "0xf3fe250efa07d870c9ede2e531f92e01ded9315c9f442c22863b579323b30218",
+      "block": 204,
+      "status": 1
+    },
+    {
+      "round": 3,
+      "user": 4,
+      "address": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65",
+      "exchange": 0,
+      "kind": "swap",
+      "hash": "0xfcccd6e864615fcddae7db36000a3173924da7ffcef46d6ebd97246f2391a2e5",
+      "block": 205,
+      "status": 1
+    },
+    {
+      "round": 3,
+      "user": 5,
+      "address": "0x9965507D1a55bcC2695C58ba16FB37d819B0A4dc",
+      "exchange": 0,
+      "kind": "swap",
+      "hash": "0xf585f2bef8851019c6e4f81b9304d5ba9887904cb78255d035b4d0ee29d81f19",
+      "block": 206,
+      "status": 1
+    },
+    {
+      "round": 3,
+      "user": 6,
+      "address": "0x976EA74026E726554dB657fA54763abd0C3a0aa9",
+      "exchange": 1,
+      "kind": "swap",
+      "hash": "0xcfad7912fe754070577502530daa44777abd76b3b155e22da471b657bb609cb8",
+      "block": 207,
+      "status": 1
+    },
+    {
+      "round": 3,
+      "user": 7,
+      "address": "0x14dC79964da2C08b23698B3D3cc7Ca32193d9955",
+      "exchange": 0,
+      "kind": "swap",
+      "hash": "0x90133f7324ca651871787df9ca67f467527acfb52180b67a7a39ca8899ad7d73",
+      "block": 208,
+      "status": 1
+    },
+    {
+      "round": 3,
+      "user": 8,
+      "address": "0x23618e81E3f5cdF7f54C3d65f7FBc0aBf5B21E8f",
+      "exchange": 0,
+      "kind": "swap",
+      "hash": "0xbc487f3cf3850af77e6786d7feeb4e2eeb6a1be29d9a7274eefe7982b81bc0cd",
+      "block": 209,
+      "status": 1
+    },
+    {
+      "round": 3,
+      "user": 9,
+      "address": "0xa0Ee7A142d267C1f36714E4a8F75612F20a79720",
+      "exchange": 1,
+      "kind": "swap",
+      "hash": "0x1633402e1462cbdbd659ef9c0573ef3ccd9f7a19ed216ad9e1b27ae23da19cfa",
+      "block": 210,
+      "status": 1
+    },
+    {
+      "round": 3,
+      "user": 10,
+      "address": "0xBcd4042DE499D14e55001CcbB24a551F3b954096",
+      "exchange": 1,
+      "kind": "swap",
+      "hash": "0x9333109d179b66efc4302d336223aec4ec287f7e31b6a1b6ef6ca1dc9892e7cd",
+      "block": 211,
+      "status": 1
+    },
+    {
+      "round": 3,
+      "user": 11,
+      "address": "0x71bE63f3384f5fb98995898A86B02Fb2426c5788",
+      "exchange": 1,
+      "kind": "swap",
+      "hash": "0x12a8f6bcad6ac074b06c349c95f0b02ccf8df71f5a4e10ec9b0b24264c664c3f",
+      "block": 212,
+      "status": 1
+    },
+    {
+      "round": 3,
+      "user": 12,
+      "address": "0xFABB0ac9d68B0B445fB7357272Ff202C5651694a",
+      "exchange": 0,
+      "kind": "swap",
+      "hash": "0x7ce8f5795156e6082cd1e9df8a1c46012efce2ff92205269c90b24c38dfb2d8c",
+      "block": 213,
+      "status": 1
+    },
+    {
+      "round": 3,
+      "user": 13,
+      "address": "0x1CBd3b2770909D4e10f157cABC84C7264073C9Ec",
+      "exchange": 1,
+      "kind": "swap",
+      "hash": "0xdad4830c90f3a840e52d3e7e3b0fa80be4310c4e4965aaad3829c264b6c52044",
+      "block": 214,
+      "status": 1
+    },
+    {
+      "round": 3,
+      "user": 14,
+      "address": "0xdF3e18d64BC6A983f673Ab319CCaE4f1a57C7097",
+      "exchange": 0,
+      "kind": "swap",
+      "hash": "0x33e8a4d4cfe4a9ad3ed78012359fdc8d2f368e817313071ba4b24bc090a1550c",
+      "block": 215,
+      "status": 1
+    },
+    {
+      "round": 3,
+      "user": 15,
+      "address": "0xcd3B766CCDd6AE721141F452C550Ca635964ce71",
+      "exchange": 0,
+      "kind": "swap",
+      "hash": "0xf0aeb4dfbca138b4fd9ef11c2870caa5d5250251577864bd40605e690e7391f8",
+      "block": 216,
+      "status": 1
+    },
+    {
+      "round": 3,
+      "user": 16,
+      "address": "0x2546BcD3c84621e976D8185a91A922aE77ECEc30",
+      "exchange": 0,
+      "kind": "swap",
+      "hash": "0x0c011ba5f0c9ae5f0346ff5659d6b0d56456c02ad5c549afb5921ae9425950bb",
+      "block": 217,
+      "status": 1
+    },
+    {
+      "round": 3,
+      "user": 17,
+      "address": "0xbDA5747bFD65F08deb54cb465eB87D40e51B197E",
+      "exchange": 1,
+      "kind": "swap",
+      "hash": "0x1fc2a432d1c2cb8b634ae8645c10c1b2fdf2d66cbb2f3cbddb4fe6c42b299837",
+      "block": 218,
+      "status": 1
+    },
+    {
+      "round": 3,
+      "user": 18,
+      "address": "0xdD2FD4581271e230360230F9337D5c0430Bf44C0",
+      "exchange": 1,
+      "kind": "swap",
+      "hash": "0x2540f73bff81bf05aabe04f0f8753a7db706417ef2f750758a556c02e5a8f849",
+      "block": 219,
+      "status": 1
+    },
+    {
+      "round": 3,
+      "user": 19,
+      "address": "0x8626f6940E2eb28930eFb4CeF49B2d1F2C9C1199",
+      "exchange": 1,
+      "kind": "swap",
+      "hash": "0x6db1f99b1679cc6273ee0aa95daceaeffd9248c7d96ab8a07a560459d4229f9c",
+      "block": 220,
+      "status": 1
+    },
+    {
+      "round": 3,
+      "user": 20,
+      "address": "0x09DB0a93B389bEF724429898f539AEB7ac2Dd55f",
+      "exchange": 1,
+      "kind": "swap",
+      "hash": "0xb6f9c61c4983f3b05392a800422b33b9b3efd7fb85d389dd07630675f1c273ec",
+      "block": 221,
+      "status": 1
+    }
+  ]
+}

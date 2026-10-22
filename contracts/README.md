@@ -1,46 +1,11 @@
-# MiniDEX 合约工程
+# 合约部分
 
-使用 Hardhat 3、ethers 6 和 TypeScript。`contracts/MiniDEX.sol` 目前仅是 Demo，DEX 功能尚待实现。
+合约在 `contracts/`，脚本在 `scripts/`，验证用例在 `test/`。完整启动步骤及实验结果见仓库根目录的 README。
 
-## 安装与检查
+- `npm ci` 安装锁定版本的依赖。
+- `npm test` 编译合约并执行 10 项验证。
+- `npm run node` 启动本地区块链，提供 25 个测试账户。
+- 在另一个终端运行 `npm run deploy`，部署代币、两个 DEX 和套利合约，并更新前端 ABI 及地址。
+- 节点运行期间执行 `npm run simulate` 和 `npm run demo`，分别生成多账户报告与套利报告。
 
-建议使用 Node.js 24。在 `contracts/` 目录执行：
-
-```bash
-nvm install
-nvm use
-npm ci
-npm run compile
-npm run typecheck
-npm test
-```
-
-`npm run build` 与 `npm run compile` 等效。类型检查会先编译合约并生成类型。当前 Solidity 编译器为 0.8.20，OpenZeppelin 使用兼容该编译器的稳定版 5.4.0。
-
-## 在本地 Hardhat 节点上部署
-
-先启动节点，并保持该终端开启：
-
-```bash
-npm run node
-```
-
-在另一个终端进入 `contracts/`，使用相同的 Node.js 版本后执行：
-
-```bash
-npm run deploy
-```
-
-默认 RPC 地址为 `http://127.0.0.1:8545`，Chain ID 为 `31337`。部署脚本输出 MiniDEX 合约地址；ABI 位于 `artifacts/contracts/MiniDEX.sol/MiniDEX.json`。
-
-## 在 Ganache 上部署
-
-启动 Ganache，在 `hardhat.config.ts` 中调整 `ganache.url` 以匹配其 RPC 地址，然后执行：
-
-```bash
-npm run deploy:ganache
-```
-
-也可以通过环境变量 `LOCAL_RPC_URL` 或 `GANACHE_RPC_URL` 覆盖对应的 RPC 地址。部署使用节点提供的已解锁测试账户。
-
-使用临时内存链测试部署脚本时，可执行 `npx hardhat run scripts/deploy.ts --network hardhat`。
+编译器随 `solc` 依赖安装，不需要另外下载编译器。测试 ETH 和水龙头代币仅在本地网络使用。

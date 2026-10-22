@@ -1,20 +1,10 @@
-import react from '@vitejs/plugin-react';
-import { defineConfig } from 'vitest/config';
-
+import react from "@vitejs/plugin-react";
+import { defineConfig } from "vite";
 export default defineConfig({
   plugins: [react()],
-  server: {
-    port: 3000,
-  },
+  server: { port: 3000, strictPort: true },
   build: {
-    outDir: 'build',
-  },
-  preview: {
-    port: 4173,
-    strictPort: true,
-  },
-  test: {
-    environment: 'jsdom',
-    setupFiles: ['./src/setupTests.ts'],
+    outDir: "build",
+    rollupOptions: { output: { manualChunks: { ethers: ["ethers"] } } },
   },
 });

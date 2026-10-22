@@ -1,0 +1,144 @@
+{
+  "passed": true,
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "mobile": {
+    "width": 390,
+    "height": 844,
+    "overflow": false
+  },
+  "steps": [
+    {
+      "action": "领取 CTA",
+      "confirmed": true
+    },
+    {
+      "action": "领取 CTB",
+      "confirmed": true
+    },
+    {
+      "action": "领取 10 ETH",
+      "confirmed": true
+    },
+    {
+      "action": "包装 ETH",
+      "confirmed": true
+    },
+    {
+      "action": "创建交易池",
+      "confirmed": true
+    },
+    {
+      "action": "授权并添加流动性",
+      "confirmed": true
+    },
+    {
+      "action": "授权并兑换 →",
+      "confirmed": true
+    },
+    {
+      "action": "销毁 NFT 并撤回",
+      "confirmed": true
+    },
+    {
+      "action": "扫描价差",
+      "confirmed": true
+    },
+    {
+      "action": "执行最优路径 →",
+      "confirmed": true
+    },
+    {
+      "action": "开始 20 用户模拟",
+      "confirmed": true
+    }
+  ],
+  "receipts": [
+    {
+      "label": "原子套利",
+      "hash": "0x35aeeaf035985eb612680f4500b61dc35c0bce1dc97b225cee1aaf6f7b5ba8c1",
+      "block": 249,
+      "status": 1,
+      "gasUsed": "222180"
+    },
+    {
+      "label": "套利回滚验证",
+      "hash": "0x4fb580f9363f587674b74feb2909ed29cb3dba37dfe4531884bced75bfce9866",
+      "block": 248,
+      "status": 0,
+      "gasUsed": "217463"
+    },
+    {
+      "label": "原子套利",
+      "hash": "0x0986a61262f5fd392776bb0f07c43f45fe9e0b5adc2504eaf27bf7aea8f63053",
+      "block": 246,
+      "status": 1,
+      "gasUsed": "222180"
+    },
+    {
+      "label": "销毁 NFT 并撤回流动性",
+      "hash": "0xa23940ad7575ce1b8e95207812c69d929e5bceffc0a6d42ce2555c91d549067f",
+      "block": 244,
+      "status": 1,
+      "gasUsed": "102040"
+    },
+    {
+      "label": "兑换",
+      "hash": "0x226d95c411613c9e2e37486548ffed6958b56e9723d9726d3236311be643742f",
+      "block": 243,
+      "status": 1,
+      "gasUsed": "101482"
+    },
+    {
+      "label": "添加流动性并铸造 NFT",
+      "hash": "0xd78c0b4b8b847d50583bfe480b6d5318db65c2333339f1ecd47b4a5c7d7913c0",
+      "block": 241,
+      "status": 1,
+      "gasUsed": "339969"
+    },
+    {
+      "label": "创建交易池",
+      "hash": "0xd8ce0e26763d7448f37785db4621680b3fd665aa0ffec164a7470a2ae63d7b6f",
+      "block": 238,
+      "status": 1,
+      "gasUsed": "135503"
+    },
+    {
+      "label": "包装 ETH",
+      "hash": "0xd2d2474ec6cdceb6b2f204f7743ae09a4f62745034830572b5424cad531d0037",
+      "block": 237,
+      "status": 1,
+      "gasUsed": "50425"
+    },
+    {
+      "label": "领取测试 ETH",
+      "hash": "0x40de6415eb6a0adce7de45ca65464c1d4d66e3062e2cb382d39bcaa7934bc029",
+      "block": 236,
+      "status": 1,
+      "gasUsed": "21000"
+    },
+    {
+      "label": "领取 CTB",
+      "hash": "0xad50697e3d625c1b54aacd07bf52b0fc47474196830905b3fc739ba2d2b99662",
+      "block": 235,
+      "status": 1,
+      "gasUsed": "72712"
+    },
+    {
+      "label": "领取 CTA",
+      "hash": "0xfaf8550c11f794996acc785bb2b2547e7339f3db47c2b07cf2ab0323a3f115fb",
+      "block": 234,
+      "status": 1,
+      "gasUsed": "72712"
+    }
+  ],
+  "consoleErrors": [],
+  "browserSimulation": {
+    "users": 20,
+    "operations": 60,
+    "failed": 0
+  },
+  "durationSeconds": 83.027
+}

@@ -1,37 +1,14 @@
-# DApp 前端起始框架
+# 前端部分
 
-使用 React、TypeScript 和 Vite，保留基础示例页面，供后续实现 DApp 功能。
+React、TypeScript、Vite 和 ethers v6。完整操作流程见根目录 README。
 
-## 安装与运行
+先启动本地区块链并部署合约，再执行：
 
-建议使用 Node.js 24。使用 nvm 时，在 `frontend/` 目录执行：
-
-```bash
-nvm install
-nvm use
-```
-
-也可以自行安装满足 `package.json` 中 `engines` 要求的 Node.js 版本。
-
-首次安装依赖并启动：
-
-```bash
+```sh
 npm ci
 npm start
 ```
 
-访问终端显示的地址（默认 [http://localhost:3000](http://localhost:3000)，端口占用时自动选择其他端口），修改 `src/App.tsx` 即可开始开发。`npm run dev` 与 `npm start` 等效。
+访问 http://127.0.0.1:3000。默认使用本地账户 01，可以切换到其他解锁的测试账户，也可以连接 31337 网络上的浏览器钱包。`npm run build` 完成类型检查并生成 `build/`。
 
-## 检查与构建
-
-```bash
-npm run typecheck
-npm test
-npm run build
-```
-
-`npm test` 使用 Vitest 执行一次测试；`npm run test:watch` 持续监听修改。测试配置在 `vite.config.ts`，测试示例在 `src/App.test.tsx`。
-
-生产文件输出到 `build/`。执行 `npm run preview`，在 [http://localhost:4173](http://localhost:4173) 本地预览生产构建。
-
-HTML 入口位于 `frontend/index.html`；图片、图标等静态资源放在 `public/`，代码和样式放在 `src/`。
+`src/generated/deployment.json` 由部署脚本生成。重建本地区块链后应重新部署合约。`public/results/` 保存的是已完成实验的历史报告，页面会标明；它们不代替当前链上查询。

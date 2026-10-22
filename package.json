@@ -1,0 +1,16 @@
+{
+  "name": "tidal-dex-course",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "setup": "node scripts/setup.cjs",
+    "dev": "node scripts/dev.cjs",
+    "test": "npm --prefix contracts test",
+    "build": "npm --prefix frontend run build",
+    "simulate": "npm --prefix contracts run simulate",
+    "demo": "npm --prefix contracts run demo"
+  },
+  "engines": {
+    "node": ">=22 <23"
+  }
+}
