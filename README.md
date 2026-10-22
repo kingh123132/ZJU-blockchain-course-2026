@@ -203,6 +203,8 @@ NFT 销毁和撤回：
 
 视频和压缩提交包放在 [作业二发布页](https://github.com/kingh123132/tidal-dex-amm-arbitrage/releases/tag/assignment-2)。文件名为 `3230105308_杨金潼_作业2.mp4`，压缩包只包含视频、仓库链接和简短说明。GitHub 可能会简化下载文件名，解压后的视频保留完整的学号、姓名和作业编号。
 
+仓库内也保存了[演示视频](deliverables/3230105308_杨金潼_作业2.mp4)、[完整提交压缩包](deliverables/3230105308_杨金潼_作业2.zip)和[仓库链接说明](deliverables/仓库链接.txt)，可直接下载。
+
 ## 目录
 
 ```text
@@ -215,6 +217,7 @@ scripts/                   安装与启动脚本
 docs/screenshots/          实际运行截图
 docs/results/              原始实验数据与回执
 docs/design/               界面设计参考
+deliverables/              演示视频、提交压缩包和仓库链接
 .work/                     本机临时测试、录制与缓存，不提交
 ```
 
